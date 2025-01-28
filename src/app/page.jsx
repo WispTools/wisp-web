@@ -1,8 +1,7 @@
 import SearchBar from "@/components/searchBar";
 import Gallery from "@/components/gallery";
-import { Recent } from "@/components/customIcon";
 
-import modules from "@/distData/slugs.json";
+import modules from "@/distData/modules.json";
 
 import "@/style/home.css";
 

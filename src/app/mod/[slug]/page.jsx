@@ -1,15 +1,17 @@
-import modules from "@/distData/slugs.json";
+import modules from "@/distData/modules.json";
 
 import "@/style/modPage.css";
 
 export default async function Page({ params }) {
   const { slug } = await params;
 
-  if (!modules.includes(slug)) {
+  const moduleFound = modules.find((module) => module.slug === slug);
+
+  if (!moduleFound) {
     return <h1>Module Not Found (Placeholder design)</h1>;
   }
 
-  const module = await import(`@/distData/modules/${slug}.json`);
+  const module = moduleFound;
 
   return (
     <div className="modPage">
