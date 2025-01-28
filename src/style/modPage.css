@@ -1,0 +1,38 @@
+.modPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+iframe {
+  width: calc(100% - 2px);
+  height: 100%;
+  border: none;
+  border: 1px solid var(--half-color);
+  border-radius: var(--container-border-radius);
+}
+
+.modHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 64px 32px;
+}
+
+.modHeader p {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.modHeader h1 {
+  margin: 0 0 24px 0;
+}
+
+.modFooter {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 32px;
+  color: var(--secondary-color);
+  justify-content: space-between;
+}

@@ -1,0 +1,113 @@
+/* Font loading */
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter/Inter.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter/Inter-Italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/Space_Mono/SpaceMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("/assets/fonts/Syne/Syne.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Variables */
+
+:root {
+  --primary-color: #ddd;
+  --secondary-color: #5b5b5b;
+  --half-color: #2e2e2e;
+  --quarter-color: #101010;
+  --background-color: #000;
+
+  --container-border-radius: 16px;
+  --input-border-radius: 4px;
+
+  --display: "Syne", sans-serif;
+  --sans-serif: "Inter", sans-serif;
+  --monospace: "Space Mono", monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--background-color);
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 1920px;
+  background-color: var(--background-color);
+  font-family: var(--sans-serif);
+  align-self: center;
+}
+
+@media screen and (max-width: 1920px) {
+  .main {
+    width: 100%;
+  }
+  .content {
+    border-style: none none none solid;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  width: calc(100% - 360px - 128px);
+  color: var(--primary-color);
+  margin-left: calc(360px + 1px);
+  padding: 0 64px;
+  border: 1px solid var(--quarter-color);
+  border-style: none solid none solid;
+}
+
+h1 {
+  font-family: var(--display);
+}
