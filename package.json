@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "compile": "node ./compileModules.js",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -11,6 +12,7 @@
   "dependencies": {
     "lucide-react": "^0.474.0",
     "next": "15.1.6",
+    "progress": "^2.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
