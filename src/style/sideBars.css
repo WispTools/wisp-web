@@ -53,13 +53,11 @@
 }
 
 .sideBarLogo .title {
-  height: 26px;
-  margin-top: 10px;
+  height: 36px;
 }
 
 .sideBarLogo .symbol {
   height: 36px;
-  margin-bottom: 2px;
 }
 
 .sideBarLink svg {
