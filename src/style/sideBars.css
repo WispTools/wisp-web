@@ -18,8 +18,8 @@
   flex-direction: column;
   gap: 32px;
   list-style: none;
-  width: calc(100% - 32px);
-  margin: 48px 0;
+  width: calc(100% - 128px + 32px + 2px);
+  padding: 48px;
 }
 
 .sideBarLink {
@@ -31,7 +31,7 @@
   border-radius: var(--container-border-radius);
   cursor: pointer;
   transition: background-color 0.05s ease;
-  width: calc(100% - 128px);
+  width: calc(100% - 128px + 64px);
   align-items: center;
   gap: 32px;
 }
@@ -87,4 +87,47 @@
 
 .sideBarHeader {
   padding: 0 32px;
+}
+
+@media screen and (max-width: 1024px) {
+  .leftSideBar {
+    width: 100%;
+    height: 128px;
+    bottom: 0px;
+    left: 0px;
+    top: auto;
+    position: fixed;
+    z-index: 1;
+    flex-direction: row;
+    border-top: 1px solid var(--half-color);
+    align-items: center;
+  }
+
+  .sideBarLinkContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .sideBarLink {
+    flex-direction: column;
+    gap: 8px;
+    width: 28vw;
+    padding: 12px 0;
+  }
+
+  .linkName {
+    font-size: 14px;
+  }
+
+  .sideBarHeader {
+    display: none;
+  }
+  .sideBarFooter {
+    display: none;
+  }
 }

@@ -151,3 +151,9 @@
   margin: 4px;
   transition: color 0.05s ease-in-out;
 }
+
+@media screen and (max-width: 1024px) {
+  .home {
+    padding: 0 32px;
+  }
+}

@@ -36,3 +36,11 @@ iframe {
   color: var(--secondary-color);
   justify-content: space-between;
 }
+
+@media screen and (max-width: 1024px) {
+  iframe {
+    width: 100vw;
+    border-style: solid none solid none;
+    border-radius: 0;
+  }
+}

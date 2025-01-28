@@ -22,7 +22,7 @@ export default function LeftSideBar() {
   return (
     <div className="leftSideBar">
       <ul className="sideBarLinkContainer">
-        <li>
+        <li className="sideBarHeader">
           <Link className="sideBarLogo" href="/">
             <img
               className="symbol"
@@ -35,33 +35,33 @@ export default function LeftSideBar() {
         <li>
           <Link className={getLinkClass("/")} href="/">
             <Home />
-            Home
+            <span className="linkName">Home</span>
           </Link>
         </li>
         <li>
           <Link className={getLinkClass("/favorites")} href="/favorites">
             <Star />
-            Favorites
+            <span className="linkName">Favorites</span>
           </Link>
         </li>
         <li>
           <Link className={getLinkClass("/recent")} href="/recent">
             <History />
-            Recently Used
+            <span className="linkName">Recent</span>
           </Link>
         </li>
       </ul>
-      <ul className="sideBarLinkContainer">
+      <ul className="sideBarLinkContainer sideBarFooter">
         <li>
           <Link className={getLinkClass("/settings")} href="/settings">
             <Settings />
-            Settings
+            <span className="linkName">Settings</span>
           </Link>
         </li>
         <li>
           <Link className={getLinkClass("/contribute")} href="/contribute">
             <GitPullRequestArrow />
-            Contributing
+            <span className="linkName">Contributing</span>
           </Link>
         </li>
         <li>
@@ -71,7 +71,7 @@ export default function LeftSideBar() {
             target="_blank"
           >
             <Github />
-            Source Code
+            <span className="linkName">Source Code</span>
           </a>
         </li>
       </ul>

@@ -1,9 +1,9 @@
 function getCurrentMode() {
   const tabIndex = getCurrentTabIndex("Convert");
   if (tabIndex === 0) {
-    return "textToBinary";
+    return "textToBase64";
   } else if (tabIndex === 1) {
-    return "binaryToText";
+    return "base64ToText";
   } else {
     return null;
   }
@@ -11,26 +11,20 @@ function getCurrentMode() {
 
 document.getElementById("text-input").addEventListener("input", function () {
   const text = this.value;
-  const binary = text
-    .split("")
-    .map((char) => char.charCodeAt(0).toString(2).padStart(8, "0"))
-    .join(" ");
-  document.getElementById("binary-output").value = binary;
+  const base64 = btoa(text);
+  document.getElementById("base64-output").value = base64;
 });
 
-document.getElementById("binary-input").addEventListener("input", function () {
-  const binary = this.value;
-  const text = binary
-    .split(" ")
-    .map((bin) => String.fromCharCode(parseInt(bin, 2)))
-    .join("");
+document.getElementById("base64-input").addEventListener("input", function () {
+  const base64 = this.value;
+  const text = atob(base64);
   document.getElementById("text-output").value = text;
 });
 
 document.getElementById("copy-button").addEventListener("click", function () {
   const textToCopy =
-    getCurrentMode() === "textToBinary"
-      ? document.getElementById("binary-output").value
+    getCurrentMode() === "textToBase64"
+      ? document.getElementById("base64-output").value
       : document.getElementById("text-output").value;
   const textArea = document.createElement("textarea");
   textArea.value = textToCopy;
@@ -45,18 +39,12 @@ document.getElementById("paste-button").addEventListener("click", function () {
     .readText()
     .then((text) => {
       const mode = getCurrentMode();
-      if (mode === "textToBinary") {
+      if (mode === "textToBase64") {
         document.getElementById("text-input").value = text;
-        document.getElementById("binary-output").value = text
-          .split("")
-          .map((char) => char.charCodeAt(0).toString(2).padStart(8, "0"))
-          .join(" ");
-      } else if (mode === "binaryToText") {
-        document.getElementById("binary-input").value = text;
-        document.getElementById("text-output").value = text
-          .split(" ")
-          .map((bin) => String.fromCharCode(parseInt(bin, 2)))
-          .join("");
+        document.getElementById("base64-output").value = btoa(text);
+      } else if (mode === "base64ToText") {
+        document.getElementById("base64-input").value = text;
+        document.getElementById("text-output").value = atob(text);
       }
     })
     .catch((err) => {
@@ -66,11 +54,11 @@ document.getElementById("paste-button").addEventListener("click", function () {
 
 document.getElementById("clear-button").addEventListener("click", function () {
   const mode = getCurrentMode();
-  if (mode === "textToBinary") {
+  if (mode === "textToBase64") {
     document.getElementById("text-input").value = "";
-    document.getElementById("binary-output").value = "";
-  } else if (mode === "binaryToText") {
-    document.getElementById("binary-input").value = "";
+    document.getElementById("base64-output").value = "";
+  } else if (mode === "base64ToText") {
+    document.getElementById("base64-input").value = "";
     document.getElementById("text-output").value = "";
   }
 });
