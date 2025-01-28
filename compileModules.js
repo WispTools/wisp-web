@@ -1,7 +1,7 @@
 const fs = require("fs");
 const ProgressBar = require("progress");
 
-console.log("Compiling modules...");
+console.log("Compiling module data");
 
 // check to see if distData folder exists, if not, create it
 if (!fs.existsSync("src/distData")) {
@@ -12,7 +12,7 @@ if (!fs.existsSync("src/distData")) {
 // if file already exists, then delete it
 if (fs.existsSync("src/distData/modules.json")) {
   fs.unlinkSync("src/distData/modules.json");
-  console.log("Deleted old modules.json file");
+  console.log("Old modules.json file found, this will be overwritten");
 }
 
 // check public/modules and fetch the names of each directory and create an array of them
@@ -33,4 +33,6 @@ const moduleData = modules.map((mod) => {
 
 fs.writeFileSync("src/distData/modules.json", JSON.stringify(moduleData));
 
-console.log("Compiled modules!");
+console.log(
+  "Compiled modules successfully! Data saved to distData/modules.json"
+);

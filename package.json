@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "compile": "node ./compileModules.js",
     "dev": "node ./compileModules.js && next dev --turbopack",
     "build": "node ./compileModules.js && next build",
     "start": "next start",
