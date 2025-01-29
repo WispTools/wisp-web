@@ -18,7 +18,7 @@ if (fs.existsSync("src/distData/modules.json")) {
 // check public/modules and fetch the names of each directory and create an array of them
 const modules = fs
   .readdirSync("public/modules", { withFileTypes: true })
-  .filter((file) => file.isDirectory())
+  .filter((file) => file.isDirectory() && file.name !== ".git")
   .map((dir) => dir.name);
 
 const bar = new ProgressBar(":bar :current/:total", { total: modules.length });
