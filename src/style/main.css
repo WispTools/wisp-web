@@ -120,5 +120,6 @@ h1 {
     padding: 0;
     min-height: auto;
     height: calc(100vh - 128px);
+    border: none;
   }
 }
