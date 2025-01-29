@@ -21,16 +21,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Clone wisp-modules into public/modules
+      - name: Clone wisp-modules into public
         run: |
           mkdir -p public/modules
           git clone --depth 1 https://github.com/EthanHazel/wisp-modules.git temp_wisp_modules
           mv temp_wisp_modules/* temp_wisp_modules/.* public/ 2>/dev/null || true
           rm -rf temp_wisp_modules
-          echo "📂 Successfully cloned wisp-modules into the public folder."
+          echo "Successfully cloned wisp-modules into the public folder."
 
-      - name: Verify Cloned Files
+      - name: Verify cloned files
         run: ls -la public/modules
+
+      - name: Remove unwanted files from wisp-modules
+        run: |
+          rm -rf public/modules/.github
+          rm -rf public/modules/README.md
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
