@@ -7,7 +7,6 @@ on:
   release:
     types: [published]
   push:
-    # this will deploy data files only when no release is created
     branches:
       - main
     paths:
@@ -15,7 +14,8 @@ on:
       - "pages/docs/**"
 
 jobs:
-  cloneModules:
+  deploy:
+    if: github.repository == 'EthanHazel/wisp'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -32,25 +32,16 @@ jobs:
       - name: Verify Cloned Files
         run: ls -la public/modules
 
-      - name: Commit and push changes
-        run: |
-          git config --local user.name "EthanHazel"
-          git add public/modules
-          git commit -m "auto(modules): update modules"
-          git push
-
-  deploy:
-    if: github.repository == 'EthanHazel/wisp'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: install Vercel CLI
+      - name: Install Vercel CLI
         run: npm install --global vercel@latest
-      - name: pull Vercel environment information
+
+      - name: Pull Vercel environment information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      - name: build project artifacts
+
+      - name: Build project artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-      - name: deploy project artifacts to Vercel
+
+      - name: Deploy project artifacts to Vercel
         run: |
           OUTPUT=$(du --inodes -d 5 .vercel/output)
           echo "$OUTPUT"
