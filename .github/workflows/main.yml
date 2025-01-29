@@ -7,7 +7,7 @@ on:
     branches:
       - main
   repository_dispatch:
-    types: [deploy_wisp]
+    types: [trigger-wisp]
 jobs:
   deploy:
     if: github.repository == 'EthanHazel/wisp'
