@@ -1,37 +1,37 @@
-name: Deploy Next.js App to Vercel
-run-name: ${{ github.actor }} is deploying to Vercel 🚀
-
-on: [push]
+name: Deploy to Vercel
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    # this will deploy data files only when no release is created
+    branches:
+      - main
+    paths:
+      - "data/**"
+      - "pages/docs/**"
 
 jobs:
-  Deploy:
+  deploy:
+    if: github.repository == 'EthanHazel/wisp'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Clone wisp-modules into public/modules
+      - uses: actions/checkout@v4
+      - name: install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: pull Vercel environment information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: build project artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: deploy project artifacts to Vercel
         run: |
-          mkdir -p public/modules
-          git clone --depth 1 https://github.com/EthanHazel/wisp-modules.git temp_wisp_modules
-          mv temp_wisp_modules/* temp_wisp_modules/.* public/modules/ 2>/dev/null || true
-          rm -rf temp_wisp_modules
-          echo "📂 Successfully cloned wisp-modules into the public/modules folder."
-
-      - name: Verify Cloned Files
-        run: ls -la public/modules
-
-      - name: Commit Cloned Files
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
-          git add public/modules
-          git commit -m "Auto-update: Cloned wisp-modules into public/modules" || echo "No changes to commit"
-          git push
-
-      - name: Deploy to Vercel
-        run: |
-          npm install -g vercel
-          vercel pull --yes --token ${{ secrets.VERCEL_TOKEN }}
-          vercel build --token ${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN }}
+          OUTPUT=$(du --inodes -d 5 .vercel/output)
+          echo "$OUTPUT"
+          LAST=$(echo "$OUTPUT" | tail -n 1)
+          PERCENTAGE=$(echo "$LAST" | awk 'BEGIN {maxtotal=15000} { printf "%.2f%%", ($1/maxtotal*100) }')
+          echo "Vercel file usage percentage" >> $GITHUB_STEP_SUMMARY
+          echo "$PERCENTAGE" >> $GITHUB_STEP_SUMMARY
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
