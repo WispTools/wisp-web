@@ -1,10 +1,19 @@
 import LeftSideBar from "@/components/leftSideBar";
+import { Viewport } from "next";
 
 import "@/style/main.css";
 
 export const metadata = {
   title: "Wisp",
   description: "Temporary website description",
+};
+
+export const viewport = {
+  themeColor: "black",
+  width: "device-width",
+  initialScale: 0.8,
+  maximumScale: 1.0,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }) {
@@ -30,11 +39,6 @@ export default function RootLayout({ children }) {
         />
         <meta name="apple-mobile-web-app-title" content="Wisp" />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-        <meta name="theme-color" content="#000" />
-        <meta
-          name="viewport"
-          content="width=840, initial-scale=0.8, maximum-scale=1.0, user-scalable=no"
-        />
       </head>
       <body>
         <div className="main">
