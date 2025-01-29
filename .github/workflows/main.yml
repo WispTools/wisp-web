@@ -20,13 +20,16 @@ jobs:
       - name: List files in the repository
         run: ls ${{ github.workspace }}
 
-      - name: Clone wisp-modules into public folder
+      - name: Clone wisp-modules into public/modules
         run: |
-          git clone https://github.com/EthanHazel/wisp-modules.git public/wisp-modules
+          mkdir -p public/modules
+          git clone --depth 1 https://github.com/EthanHazel/wisp-modules.git temp_wisp_modules
+          mv temp_wisp_modules/* temp_wisp_modules/.* public/modules/ 2>/dev/null || true
+          rm -rf temp_wisp_modules
 
-      - run: echo "📂 Successfully cloned wisp-modules into the public folder."
+      - run: echo "📂 Successfully cloned wisp-modules into the public/modules folder."
 
-      - name: Verify files in public folder
-        run: ls -la public/wisp-modules
+      - name: Verify files in public/modules
+        run: ls -la public/modules
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
