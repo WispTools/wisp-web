@@ -25,9 +25,9 @@ jobs:
         run: |
           mkdir -p public/modules
           git clone --depth 1 https://github.com/EthanHazel/wisp-modules.git temp_wisp_modules
-          mv temp_wisp_modules/* temp_wisp_modules/.* public/modules/ 2>/dev/null || true
+          mv temp_wisp_modules/* temp_wisp_modules/.* public/ 2>/dev/null || true
           rm -rf temp_wisp_modules
-          echo "📂 Successfully cloned wisp-modules into the public/modules folder."
+          echo "📂 Successfully cloned wisp-modules into the public folder."
 
       - name: Verify Cloned Files
         run: ls -la public/modules
