@@ -1,3 +1,7 @@
+.home {
+  padding: 0 32px;
+}
+
 .homeHeader {
   text-align: center;
   width: calc(100% - 64px);
@@ -150,10 +154,4 @@
   color: var(--secondary-color);
   margin: 4px;
   transition: color 0.05s ease-in-out;
-}
-
-@media screen and (max-width: 1024px) {
-  .home {
-    padding: 0 32px;
-  }
 }

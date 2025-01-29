@@ -101,15 +101,19 @@ body {
   gap: 16px;
   min-height: 100vh;
   height: auto;
-  width: calc(100% - 360px - 128px);
+  width: calc(100% - 360px);
   color: var(--primary-color);
   margin-left: calc(360px + 1px);
-  padding: 0 64px;
   border: 1px solid var(--quarter-color);
   border-style: none solid none solid;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--display);
 }
 

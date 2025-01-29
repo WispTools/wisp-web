@@ -117,12 +117,18 @@
   .sideBarLink {
     flex-direction: column;
     gap: 8px;
-    width: 28vw;
+    width: 25vw;
     padding: 12px 0;
   }
 
   .linkName {
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
+    color: var(--secondary-color);
+  }
+
+  .sideBarLink.active .linkName {
+    color: var(--background-color);
   }
 
   .sideBarHeader {

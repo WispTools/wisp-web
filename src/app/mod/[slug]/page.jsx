@@ -1,3 +1,5 @@
+import { Star, Info } from "lucide-react";
+
 import modules from "@/distData/modules.json";
 
 import "@/style/modPage.css";
@@ -16,19 +18,21 @@ export default async function Page({ params }) {
   return (
     <div className="modPage">
       <div className="modHeader">
-        <h1>{module.name}</h1>
-        <p>{module.description}</p>
+        <div className="modInfo">
+          <img className="logo" src="/assets/logo/symbol.svg" alt="symbol" />
+          <h2>{module.name}</h2>
+          <p>{module.description}</p>
+        </div>
+        <div className="modActions">
+          <button name="favorite" className="modActionButton">
+            <Star />
+          </button>
+          <button name="info" className="modActionButton">
+            <Info />
+          </button>
+        </div>
       </div>
       <iframe src={`/modules/${slug}/index.html`} />
-      <div className="modFooter">
-        <p>
-          Contributors:{" "}
-          {module.contributors
-            .join(", ")
-            .replace(/, (?=(?:[^,]*, )?[^,]*$)/g, ", ")}
-        </p>
-        <p>Version: {module.version}</p>
-      </div>
     </div>
   );
 }
