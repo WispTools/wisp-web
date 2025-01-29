@@ -32,12 +32,11 @@ jobs:
       - name: Verify Cloned Files
         run: ls -la public/modules
 
-      - name: Commit Cloned Files
+      - name: Commit and push changes
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
+          git config --local user.name "EthanHazel"
           git add public/modules
-          git commit -m "Auto-update: Cloned wisp-modules into public/modules" || echo "No changes to commit"
+          git commit -m "auto(modules): update modules"
           git push
 
   deploy:
