@@ -36,23 +36,28 @@
   gap: 32px;
 }
 
-.sideBarLogo {
+.sideBarHeader {
   display: flex;
   text-decoration: none;
   padding: 16px 26px;
   border-radius: var(--container-border-radius);
   cursor: pointer;
   transition: background-color 0.05s ease;
-  width: calc(100% - 128px + 12px);
+  width: calc(100% - 52px);
   align-items: center;
   gap: 26px;
 }
 
-.sideBarLogo:hover {
+.sideBarHeader:hover {
   background-color: var(--quarter-color);
 }
 
-.sideBarLogo .title {
+.sideBarLogo {
+  display: flex;
+  gap: 24px;
+}
+
+.sideBarHeader .title {
   height: 36px;
 }
 
@@ -83,10 +88,6 @@
 
 .sideBarLink.active svg {
   color: var(--background-color);
-}
-
-.sideBarHeader {
-  padding: 0 32px;
 }
 
 @media screen and (max-width: 1024px) {
