@@ -10,7 +10,7 @@ on:
     types: [trigger-wisp]
 jobs:
   deploy:
-    if: github.repository == 'WispTools/wisp'
+    if: github.repository == 'WispTools/wisp-web'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
