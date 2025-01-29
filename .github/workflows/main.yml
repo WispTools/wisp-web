@@ -22,7 +22,9 @@ jobs:
 
       - name: Clone wisp-modules into public folder
         run: |
-          git clone https://github.com/EthanHazel/wisp-modules.git public/wisp-modules
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/EthanHazel/wisp-modules.git public/wisp-modules
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: echo "📂 Successfully cloned wisp-modules into the public folder."
 
