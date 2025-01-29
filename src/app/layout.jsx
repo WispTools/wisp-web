@@ -31,7 +31,10 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Wisp" />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
         <meta name="theme-color" content="#000" />
-        <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+        <meta
+          name="viewport"
+          content="width=840, initial-scale=0.8, maximum-scale=1.0, user-scalable=no"
+        />
       </head>
       <body>
         <div className="main">
