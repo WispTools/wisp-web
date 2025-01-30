@@ -30,6 +30,7 @@ jobs:
         run: |
           while IFS= read -r line; do
             rm -rf "public/$line"
+            echo "Removed: public/$line"
           done < public/.wispignore
           echo "Successfully removed unwanted files from wisp-modules."
 
