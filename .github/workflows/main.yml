@@ -32,6 +32,8 @@ jobs:
             rm -rf "public/$line"
             echo "Removed: public/$line"
           done < public/.webpurge
+          rm -rf public/.webpurge
+          echo "Removed .webpurge file"
           echo "Successfully removed unwanted files from wisp-modules."
 
       - name: Install Vercel CLI
