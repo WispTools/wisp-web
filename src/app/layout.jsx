@@ -46,6 +46,7 @@ export default function RootLayout({ children }) {
           <LeftSideBar />
           <div className="content">{children}</div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
