@@ -29,7 +29,7 @@ jobs:
       - name: Remove unwanted files from wisp-modules
         run: |
           while IFS= read -r line; do
-            rm -rf "public/modules/$line"
+            rm -rf "public/$line"
           done < public/.wispignore
           echo "Successfully removed unwanted files from wisp-modules."
 
