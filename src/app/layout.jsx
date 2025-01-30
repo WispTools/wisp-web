@@ -1,5 +1,6 @@
 import LeftSideBar from "@/components/leftSideBar";
 import { Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import "@/style/main.css";
 
