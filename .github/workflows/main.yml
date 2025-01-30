@@ -30,7 +30,7 @@ jobs:
         run: |
           while IFS= read -r line; do
             rm -rf "public/modules/$line"
-          done < public/modules/.wispignore
+          done < public/.wispignore
           echo "Successfully removed unwanted files from wisp-modules."
 
       - name: Install Vercel CLI
