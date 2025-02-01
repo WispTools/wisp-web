@@ -3,6 +3,14 @@ const ProgressBar = require("progress");
 
 console.log("Compiling module data");
 
+// Check to see if public/modules folder exists, if not, cancel
+if (!fs.existsSync("public/modules")) {
+  console.log(
+    "public/modules folder not found, please run npm run clone first"
+  );
+  process.exit();
+}
+
 // check to see if distData folder exists, if not, create it
 if (!fs.existsSync("src/distData")) {
   fs.mkdirSync("src/distData");
