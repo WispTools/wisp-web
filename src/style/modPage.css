@@ -94,6 +94,14 @@ iframe {
 }
 
 @media screen and (max-width: 1024px) {
+  .modPage {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
   iframe {
     width: 100vw;
     border-style: solid none solid none;
