@@ -1,5 +1,7 @@
 import { Star, Info } from "lucide-react";
 
+import BackButton from "@/components/backButton";
+
 import modules from "@/distData/modules.json";
 
 import "@/style/modPage.css";
@@ -13,13 +15,20 @@ export default async function Page({ params }) {
     return <h1>Module Not Found (Placeholder design)</h1>;
   }
 
+  const goBack = () => {
+    // go home
+    window.location.href = "/";
+  };
+
   const module = moduleFound;
 
   return (
     <div className="modPage">
       <div className="modHeader">
         <div className="modInfo">
-          <img className="logo" src="/assets/logo/symbol.svg" alt="symbol" />
+          <div className="modActions backButton">
+            <BackButton />
+          </div>
           <h2>{module.name}</h2>
           <p>{module.description}</p>
         </div>

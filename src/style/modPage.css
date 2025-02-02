@@ -26,7 +26,7 @@ iframe {
   gap: 8px;
 }
 
-.modInfo .logo {
+.modActionSpacer {
   display: none;
 }
 
@@ -37,6 +37,10 @@ iframe {
   gap: 8px;
 }
 
+.backButton {
+  display: none;
+}
+
 .modActionButton {
   display: inline-flex;
   align-items: center;
@@ -44,21 +48,37 @@ iframe {
   aspect-ratio: 1 / 1;
   border-radius: var(--input-border-radius);
   background-color: var(--background-color);
-  color: var(--half-color);
+  color: var(--secondary-color);
   border: none;
   cursor: pointer;
   padding: 8px;
-  transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
 }
 
-.modActionButton:hover {
-  background-color: var(--quarter-color);
-  color: var(--primary-color);
+@media (hover: hover) {
+  .modActionButton {
+    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
+  }
+
+  .modActionButton:hover {
+    background-color: var(--quarter-color);
+    color: var(--primary-color);
+  }
+
+  .modActionButton:active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
 }
 
-.modActionButton:active {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+@media (hover: none) {
+  .modActionButton {
+    transition: background-color none, color none;
+  }
+  .modActionButton:active {
+    background-color: var(--secondaryw-color);
+    color: var(--primary-color);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+  }
 }
 
 .modHeader p {
@@ -70,6 +90,7 @@ iframe {
   padding: 0 36px 0 0;
   margin: 0;
   border-right: 1px solid var(--half-color);
+  text-align: left;
 }
 
 @media screen and (max-width: 1024px) {
@@ -85,12 +106,38 @@ iframe {
 
   .modHeader h2 {
     border: none;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 0 0 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: clamp(12px, 4vw, 36px);
   }
 
-  .modInfo .logo {
-    display: inline-block;
+  .backButton {
+    display: inline-flex;
+  }
+
+  .modActionSpacer {
+    display: block;
+    width: 52px;
+    height: 52px;
+  }
+
+  .modActionButton {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+  }
+
+  .modActionButton svg {
     width: 36px;
     height: 36px;
-    margin-right: 24px;
+  }
+
+  .modActions {
+    gap: 16px;
   }
 }
