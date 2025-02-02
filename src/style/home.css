@@ -63,13 +63,15 @@
   color: var(--secondary-color);
 }
 
-.homeSearchContainer:hover {
-  background-color: var(--quarter-color);
-  outline: 1px solid var(--half-color);
-}
+@media (hover: hover) {
+  .homeSearchContainer:hover {
+    background-color: var(--quarter-color);
+    outline: 1px solid var(--half-color);
+  }
 
-.homeSearchContainer:hover #homeSearch {
-  background-color: var(--quarter-color);
+  .homeSearchContainer:hover #homeSearch {
+    background-color: var(--quarter-color);
+  }
 }
 
 .homeSearchContainer:focus-within {
@@ -154,4 +156,32 @@
   color: var(--secondary-color);
   margin: 4px;
   transition: color 0.05s ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .home {
+    padding: 0;
+    margin-top: 112px;
+  }
+
+  .homeSearchContainer {
+    background-color: var(--background-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    border-radius: 0;
+    border-style: none;
+    border-bottom: 1px solid var(--half-color);
+    outline: 0px solid var(--half-color);
+    box-shadow: none;
+    height: 112px;
+    width: 100%;
+  }
+
+  .homeSearchContainer svg {
+    padding: 0 36px 0 24px;
+    width: 32px;
+    height: 32px;
+  }
 }
