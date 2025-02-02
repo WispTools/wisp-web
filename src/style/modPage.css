@@ -26,10 +26,6 @@ iframe {
   gap: 8px;
 }
 
-.modActionSpacer {
-  display: none;
-}
-
 .modActions {
   display: flex;
   flex-direction: row;
@@ -37,13 +33,15 @@ iframe {
   gap: 8px;
 }
 
-.backButton {
+.backButton,
+.modLogo {
   display: none;
 }
 
 .modActionButton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   aspect-ratio: 1 / 1;
   border-radius: var(--input-border-radius);
@@ -100,6 +98,7 @@ iframe {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Mobile Safari is wack */
   }
 
   iframe {
@@ -108,44 +107,37 @@ iframe {
     border-radius: 0;
   }
 
-  .modHeader p {
+  .modInfo {
     display: none;
   }
 
-  .modHeader h2 {
-    border: none;
-    text-align: left;
-    margin: 0 auto;
-    padding: 0 0 0 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100%;
-    font-size: clamp(12px, 4vw, 36px);
-  }
-
-  .backButton {
-    display: inline-flex;
-  }
-
-  .modActionSpacer {
-    display: block;
-    width: 52px;
-    height: 52px;
-  }
-
   .modActionButton {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
   }
 
   .modActionButton svg {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
   }
 
   .modActions {
     gap: 16px;
+    width: 150px;
+    justify-content: flex-end;
+  }
+
+  .backButton {
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+
+  .modLogo {
+    display: inline-flex;
+    height: 42px;
+    width: 42px;
+    justify-content: center;
+    align-items: center;
   }
 }

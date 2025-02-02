@@ -25,13 +25,16 @@ export default async function Page({ params }) {
   return (
     <div className="modPage">
       <div className="modHeader">
+        <div className="modActions backButton">
+          <BackButton />
+        </div>
         <div className="modInfo">
-          <div className="modActions backButton">
-            <BackButton />
-          </div>
           <h2>{module.name}</h2>
           <p>{module.description}</p>
         </div>
+        <a className="modLogo" href="/">
+          <img src="/assets/logo/symbol.svg" alt="logo" />
+        </a>
         <div className="modActions">
           <button name="favorite" className="modActionButton">
             <Star />
