@@ -160,7 +160,7 @@
 
 @media screen and (max-width: 1024px) {
   .home {
-    padding: 0;
+    padding: 0px;
     margin-top: 112px;
   }
 
@@ -179,9 +179,34 @@
     width: 100%;
   }
 
+  .homeHeader {
+    border: none;
+    padding: 0px;
+  }
+
+  .homeSearchContainer:focus-within {
+    outline: 0px solid var(--half-color);
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  #homeSearch {
+    font-size: 24px;
+  }
+
   .homeSearchContainer svg {
     padding: 0 36px 0 24px;
     width: 32px;
     height: 32px;
+  }
+
+  .gallery {
+    gap: 0px;
+    border-top: 1px solid var(--half-color);
+  }
+
+  .modLink {
+    border-radius: 0px;
+    border-style: none;
+    border-bottom: 1px solid var(--half-color);
   }
 }
