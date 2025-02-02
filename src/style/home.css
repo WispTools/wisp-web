@@ -104,20 +104,23 @@
   cursor: pointer;
   text-decoration: none;
   align-items: center;
+  outline: 0px solid var(--half-color);
   transition: background-color 0.05s ease-in-out, outline 0.05s ease-in-out;
 }
 
-.modLink:hover {
-  background-color: var(--quarter-color);
-  outline: 1px solid var(--half-color);
-}
+@media (hover: hover) {
+  .modLink:hover {
+    background-color: var(--quarter-color);
+    outline: 1px solid var(--half-color);
+  }
 
-.modLink:hover p {
-  color: var(--primary-color);
-}
+  .modLink:hover p {
+    color: var(--primary-color);
+  }
 
-.modLink:hover .modLinkIcon {
-  background-color: var(--half-color);
+  .modLink:hover .modLinkIcon {
+    background-color: var(--half-color);
+  }
 }
 
 .modLink:active {
@@ -159,6 +162,9 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .main {
+    width: 100%;
+  }
   .home {
     padding: 0px;
     margin-top: 112px;
@@ -182,6 +188,7 @@
   .homeHeader {
     border: none;
     padding: 0px;
+    width: 100%;
   }
 
   .homeSearchContainer:focus-within {
@@ -191,6 +198,15 @@
 
   #homeSearch {
     font-size: 24px;
+  }
+
+  .homeSearchContainer:focus-within,
+  .homeSearchContainer:focus-within #homeSearch {
+    background-color: var(--background-color);
+  }
+
+  #homeSearch {
+    background-color: none;
   }
 
   .homeSearchContainer svg {
