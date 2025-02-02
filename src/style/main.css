@@ -67,6 +67,10 @@
   --monospace: "Space Mono", monospace;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   display: flex;
   flex-direction: column;
