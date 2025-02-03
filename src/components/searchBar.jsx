@@ -6,12 +6,19 @@ import { useState, useEffect } from "react";
 import HeaderButton from "./headerButton";
 
 export default function SearchBar() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [isMobile, setIsMobile] = useState(false); // Default to false
+  const [isMounted, setIsMounted] = useState(false); // Track if component is mounted
 
   useEffect(() => {
+    // Set isMounted to true after the component mounts on the client
+    setIsMounted(true);
+    // Set the initial value of isMobile based on window.innerWidth
+    setIsMobile(window.innerWidth < 1024);
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
     };
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -69,6 +76,11 @@ export default function SearchBar() {
       </>
     );
   };
+
+  // Render a placeholder or loading state during server-side rendering
+  if (!isMounted) {
+    return null; // Or return a loading spinner or placeholder
+  }
 
   return <>{isMobile ? mobileSearch() : desktopSearch()}</>;
 }
