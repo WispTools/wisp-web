@@ -38,47 +38,6 @@ iframe {
   display: none;
 }
 
-.modActionButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  aspect-ratio: 1 / 1;
-  border-radius: var(--input-border-radius);
-  background-color: var(--background-color);
-  color: var(--secondary-color);
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-
-@media (hover: hover) {
-  .modActionButton {
-    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
-  }
-
-  .modActionButton:hover {
-    background-color: var(--quarter-color);
-    color: var(--primary-color);
-  }
-
-  .modActionButton:active {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-  }
-}
-
-@media (hover: none) {
-  .modActionButton {
-    transition: background-color none, color none;
-  }
-  .modActionButton:active {
-    background-color: var(--secondaryw-color);
-    color: var(--primary-color);
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
-  }
-}
-
 .modHeader p {
   margin: 0 0 0 36px;
   color: var(--secondary-color);
@@ -116,17 +75,6 @@ iframe {
 
   .modInfo {
     display: none;
-  }
-
-  .modActionButton {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-  }
-
-  .modActionButton svg {
-    width: 24px;
-    height: 24px;
   }
 
   .modActions {

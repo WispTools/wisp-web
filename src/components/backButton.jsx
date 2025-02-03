@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
+import HeaderButton from "./headerButton";
 
 export default function BackButton() {
   const goBack = () => {
@@ -8,9 +8,5 @@ export default function BackButton() {
     window.location.href = "/";
   };
 
-  return (
-    <button name="back" className="modActionButton" onClick={goBack}>
-      <ArrowLeft />
-    </button>
-  );
+  return <HeaderButton icon="ArrowLeft" name="Back" onClick={goBack} />;
 }

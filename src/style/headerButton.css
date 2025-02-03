@@ -1,0 +1,59 @@
+.headerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--input-border-radius);
+  background: none;
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.headerButton svg {
+  width: 32px;
+  height: 32px;
+  color: var(--secondary-color);
+}
+
+@media (hover: hover) {
+  .headerButton {
+    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
+  }
+
+  .headerButton:hover {
+    background-color: var(--quarter-color);
+    color: var(--primary-color);
+  }
+
+  .headerButton:active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
+}
+
+@media (hover: none) {
+  .headerButton {
+    transition: background-color none, color none;
+  }
+  .headerButton:active {
+    background-color: var(--secondaryw-color);
+    color: var(--primary-color);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .headerButton {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+
+  .headerButton svg {
+    width: 24px;
+    height: 24px;
+  }
+}

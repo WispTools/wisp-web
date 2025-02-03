@@ -1,6 +1,5 @@
-import { Star, Info } from "lucide-react";
-
 import BackButton from "@/components/backButton";
+import HeaderButton from "@/components/headerButton";
 
 import modules from "@/distData/modules.json";
 
@@ -36,12 +35,8 @@ export default async function Page({ params }) {
           <img src="/assets/logo/symbol.svg" alt="logo" />
         </a>
         <div className="modActions">
-          <button name="favorite" className="modActionButton">
-            <Star />
-          </button>
-          <button name="info" className="modActionButton">
-            <Info />
-          </button>
+          <HeaderButton icon="Star" name="favorite" />
+          <HeaderButton icon="Info" name="info" />
         </div>
       </div>
       <iframe src={`/modules/${slug}/index.html`} />
