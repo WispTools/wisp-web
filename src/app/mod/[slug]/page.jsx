@@ -14,11 +14,6 @@ export default async function Page({ params }) {
     return <h1>Module Not Found (Placeholder design)</h1>;
   }
 
-  const goBack = () => {
-    // go home
-    window.location.href = "/";
-  };
-
   const module = moduleFound;
 
   return (

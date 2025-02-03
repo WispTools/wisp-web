@@ -1,12 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import HeaderButton from "./headerButton";
 
 export default function BackButton() {
-  const goBack = () => {
-    // go home
-    window.location.href = "/";
-  };
+  const router = useRouter();
 
-  return <HeaderButton icon="ArrowLeft" name="Back" onClick={goBack} />;
+  return (
+    <HeaderButton icon="ArrowLeft" name="Back" onClick={() => router.back()} />
+  );
 }
