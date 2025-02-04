@@ -111,10 +111,6 @@
   transition: background-color 0.05s ease-in-out, outline 0.05s ease-in-out;
 }
 
-.modLink p {
-  font-family: var(--sans-serif);
-}
-
 @media (hover: hover) {
   .modLink:hover {
     background-color: var(--quarter-color);
@@ -158,14 +154,18 @@
 }
 
 .modLinkInfo h3 {
+  font-family: var(--sans-serif);
   color: var(--primary-color);
   margin: 4px;
+  font-size: 18px;
 }
 
 .modLinkInfo p {
   color: var(--secondary-color);
   margin: 4px;
   transition: color 0.05s ease-in-out;
+  font-family: var(--sans-serif);
+  font-size: 14px;
 }
 
 @media screen and (max-width: 1024px) {

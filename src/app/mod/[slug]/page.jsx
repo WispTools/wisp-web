@@ -22,10 +22,8 @@ export default async function Page({ params }) {
     <div className="modPage">
       <MobileHeader>
         <BackButton />
-        <HeaderButton icon="Heart" name="favorite" />
         <Logo size={"48px"} />
-        <HeaderButton icon="Share2" name="share" />
-        <HeaderButton icon="Info" name="info" />
+        <HeaderButton icon="Menu" name="menu" />
       </MobileHeader>
       <div className="modHeader mobileHide">
         <div className="modInfo">
