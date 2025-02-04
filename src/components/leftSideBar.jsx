@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import {
   Home,
@@ -13,11 +14,13 @@ import {
 } from "lucide-react";
 
 import Logo from "./logo";
+import Transition from "./transition";
 
 import "@/style/sideBars.css";
 
 export default function LeftSideBar() {
   const pathname = usePathname();
+  const router = useRouter();
   const getLinkClass = (path) =>
     `sideBarLink${path === pathname ? " active" : ""}`;
 
@@ -31,36 +34,51 @@ export default function LeftSideBar() {
           </Link>
         </li>
         <li>
-          <Link className={getLinkClass("/")} href="/">
+          <button
+            className={getLinkClass("/")}
+            onClick={() => Transition(router, "/", pathname)}
+          >
             <Home />
             <span className="linkName">Home</span>
-          </Link>
+          </button>
         </li>
         <li>
-          <Link className={getLinkClass("/favorites")} href="/favorites">
+          <button
+            className={getLinkClass("/favorites")}
+            onClick={() => Transition(router, "/favorites", pathname)}
+          >
             <Heart />
             <span className="linkName">Favorites</span>
-          </Link>
+          </button>
         </li>
         <li>
-          <Link className={getLinkClass("/recent")} href="/recent">
+          <button
+            className={getLinkClass("/recent")}
+            onClick={() => Transition(router, "/recent", pathname)}
+          >
             <History />
             <span className="linkName">Recent</span>
-          </Link>
+          </button>
         </li>
       </ul>
       <ul className="sideBarLinkContainer sideBarFooter">
         <li>
-          <Link className={getLinkClass("/settings")} href="/settings">
+          <button
+            className={getLinkClass("/settings")}
+            onClick={() => Transition(router, "/settings", pathname)}
+          >
             <Settings />
             <span className="linkName">Settings</span>
-          </Link>
+          </button>
         </li>
         <li>
-          <Link className={getLinkClass("/contribute")} href="/contribute">
+          <button
+            className={getLinkClass("/contribute")}
+            onClick={() => Transition(router, "/contribute", pathname)}
+          >
             <GitPullRequestArrow />
             <span className="linkName">Contributing</span>
-          </Link>
+          </button>
         </li>
         <li>
           <a

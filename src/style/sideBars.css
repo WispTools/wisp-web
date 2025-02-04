@@ -29,11 +29,18 @@
   font-size: 16px;
   padding: 16px 32px;
   border-radius: var(--container-border-radius);
+  background-color: var(--background-color);
   cursor: pointer;
   transition: background-color 0.05s ease;
-  width: calc(100% - 128px + 64px);
+  width: 100%;
   align-items: center;
   gap: 32px;
+  font-family: var(--sans-serif);
+  border: none;
+}
+
+a.sideBarLink {
+  width: calc(100% - 64px);
 }
 
 .sideBarHeader {

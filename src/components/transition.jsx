@@ -1,5 +1,15 @@
-export default function Transition(router, route) {
+"use client";
+
+export default function Transition(router, route, currentRoute) {
+  if (route == currentRoute) {
+    return;
+  }
   const contentElements = document.querySelectorAll(".fadeContent");
+
+  if (contentElements.length == 0) {
+    router.push(route);
+    return;
+  }
 
   if (contentElements.length > 0) {
     contentElements.forEach((element) => {
