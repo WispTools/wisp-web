@@ -9,12 +9,14 @@ export default function Home() {
   return (
     <div className="home">
       <SearchBar />
-      <div className="homeHeader">
-        <h3>Welcome to Wisp!</h3>
-        <h1>The Web Interface for Simple Programs</h1>
-        <h3>Currently hosting {modules.length} modules</h3>
+      <div className="homeContent">
+        <div className="homeHeader">
+          <h3>Welcome to Wisp!</h3>
+          <h1>The Web Interface for Simple Programs</h1>
+          <h3>Currently hosting {modules.length} modules</h3>
+        </div>
+        <Gallery />
       </div>
-      <Gallery />
     </div>
   );
 }

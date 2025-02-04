@@ -54,6 +54,7 @@ iframe {
   html {
     overflow: hidden;
     position: fixed;
+    width: 100%;
   }
 
   .modPage {
@@ -69,30 +70,8 @@ iframe {
 
   iframe {
     width: 100vw;
-    border-style: solid none solid none;
+    height: calc(100% - 64px - 48px);
+    border-style: none none solid none;
     border-radius: 0;
-  }
-
-  .modInfo {
-    display: none;
-  }
-
-  .modActions {
-    gap: 16px;
-    width: 150px;
-    justify-content: flex-end;
-  }
-
-  .backButton {
-    display: inline-flex;
-    justify-content: flex-start;
-  }
-
-  .modLogo {
-    display: inline-flex;
-    height: 42px;
-    width: 42px;
-    justify-content: center;
-    align-items: center;
   }
 }

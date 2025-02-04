@@ -162,10 +162,6 @@
   transition: color 0.05s ease-in-out;
 }
 
-#mobileHeader {
-  display: none;
-}
-
 @media screen and (max-width: 1024px) {
   .main {
     width: 100%;
@@ -173,7 +169,12 @@
 
   .home {
     padding: 0px;
-    margin-top: 112px;
+    overflow: hidden;
+  }
+
+  .homeContent {
+    height: calc(100% - 112px);
+    overflow-y: scroll;
   }
 
   .homeSearchContainer {
@@ -191,89 +192,10 @@
     width: 100%;
   }
 
-  #mobileHeader {
-    display: flex;
-    overflow: hidden;
-    gap: 12px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 0;
-    background-color: var(--background-color);
-    position: fixed;
-    border-style: none;
-    border-bottom: 1px solid var(--half-color);
-    outline: 0px solid var(--half-color);
-    box-shadow: none;
-    height: 112px;
-    width: calc(100% - 64px);
-    padding: 0 32px;
-  }
-
-  #mobileHeader .logo {
-    display: inline-flex;
-    height: 42px;
-    width: 42px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #mobileSearch {
-    z-index: 3;
-    opacity: 1;
-    transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  }
-
-  #mobileSearch.hidden {
-    opacity: 0;
-    top: -112px;
-  }
-
-  .homeSearchContainer svg {
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-
-  .mobileSearchContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: calc(100% - 64px);
-    justify-content: space-between;
-  }
-
-  .mobileSearchContainer #homeSearch {
-    width: calc(100% - 48px - 48px - 24px);
-  }
-
   .homeHeader {
     border: none;
     padding: 0px;
     width: 100%;
-  }
-
-  .homeSearchContainer:focus-within {
-    outline: 0px solid var(--half-color);
-    border-bottom: 3px solid var(--primary-color);
-  }
-
-  #homeSearch {
-    font-size: 24px;
-  }
-
-  .homeSearchContainer:focus-within,
-  .homeSearchContainer:focus-within #homeSearch {
-    background-color: var(--background-color);
-  }
-
-  #homeSearch {
-    background-color: none;
   }
 
   .gallery {
@@ -285,5 +207,10 @@
     border-radius: 0px;
     border-style: none;
     border-bottom: 1px solid var(--half-color);
+  }
+
+  html {
+    overflow: scroll;
+    position: relative;
   }
 }

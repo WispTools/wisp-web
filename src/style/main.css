@@ -126,4 +126,8 @@ h6 {
     height: 100vh;
     border: none;
   }
+
+  .mobileHide {
+    display: none !important;
+  }
 }

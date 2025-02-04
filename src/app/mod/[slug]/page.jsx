@@ -1,4 +1,6 @@
+import Logo from "@/components/logo";
 import BackButton from "@/components/backButton";
+import MobileHeader from "@/components/mobileHeader";
 import HeaderButton from "@/components/headerButton";
 
 import modules from "@/distData/modules.json";
@@ -18,19 +20,20 @@ export default async function Page({ params }) {
 
   return (
     <div className="modPage">
-      <div className="modHeader">
-        <div className="modActions backButton">
-          <BackButton />
-        </div>
+      <MobileHeader>
+        <BackButton />
+        <HeaderButton icon="Heart" name="favorite" />
+        <Logo size={"48px"} />
+        <HeaderButton icon="Share2" name="share" />
+        <HeaderButton icon="Info" name="info" />
+      </MobileHeader>
+      <div className="modHeader mobileHide">
         <div className="modInfo">
           <h2>{module.name}</h2>
           <p>{module.description}</p>
         </div>
-        <a className="modLogo" href="/">
-          <img src="/assets/logo/symbol.svg" alt="logo" />
-        </a>
         <div className="modActions">
-          <HeaderButton icon="Star" name="favorite" />
+          <HeaderButton icon="Heart" name="favorite" />
           <HeaderButton icon="Info" name="info" />
         </div>
       </div>

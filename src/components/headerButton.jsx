@@ -1,6 +1,6 @@
 "use client";
 
-import "../style/headerButton.css";
+import "@/style/headerButton.css";
 import { useState, useEffect } from "react";
 
 export default function HeaderButton({ icon, name, onClick = () => {} }) {

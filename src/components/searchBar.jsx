@@ -3,7 +3,9 @@
 import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
+import MobileHeader from "./mobileHeader";
 import HeaderButton from "./headerButton";
+import Logo from "./logo";
 
 export default function SearchBar() {
   const [isMobile, setIsMobile] = useState(false); // Default to false
@@ -54,13 +56,13 @@ export default function SearchBar() {
   const mobileSearch = () => {
     return (
       <>
-        <div id="mobileHeader">
+        <MobileHeader>
           <HeaderButton icon="Settings" name="Settings" />
           <a href="/" className="logo">
-            <img src="/assets/logo/symbol.svg" alt="logo" />
+            <Logo size={"48px"} />
           </a>
           <HeaderButton icon="Search" name="Search" onClick={toggleSearch} />
-        </div>
+        </MobileHeader>
         <div className="homeSearchContainer hidden" id="mobileSearch">
           <div className="mobileSearchContainer">
             <HeaderButton icon="Search" name="Search" />

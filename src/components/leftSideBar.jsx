@@ -6,11 +6,13 @@ import { usePathname } from "next/navigation";
 import {
   Home,
   Settings,
-  Star,
+  Heart,
   Github,
   GitPullRequestArrow,
   History,
 } from "lucide-react";
+
+import Logo from "./logo";
 
 import "@/style/sideBars.css";
 
@@ -24,11 +26,7 @@ export default function LeftSideBar() {
       <ul className="sideBarLinkContainer">
         <li className="sideBarHeader">
           <Link className="sideBarLogo" href="/">
-            <img
-              className="symbol"
-              src="/assets/logo/symbol.svg"
-              alt="symbol"
-            />
+            <Logo size={"34px"} />
             <img className="title" src="/assets/logo/title.svg" alt="logo" />
           </Link>
         </li>
@@ -40,7 +38,7 @@ export default function LeftSideBar() {
         </li>
         <li>
           <Link className={getLinkClass("/favorites")} href="/favorites">
-            <Star />
+            <Heart />
             <span className="linkName">Favorites</span>
           </Link>
         </li>
