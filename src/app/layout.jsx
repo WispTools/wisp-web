@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Wisp" />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
       </head>
-      <body>
+      <body onTouchStart="">
         <div className="main">
           <LeftSideBar />
           <div className="content">{children}</div>
