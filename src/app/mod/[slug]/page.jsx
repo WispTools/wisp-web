@@ -25,7 +25,7 @@ export default async function Page({ params }) {
         <Logo size={"48px"} />
         <HeaderButton icon="Menu" name="menu" />
       </MobileHeader>
-      <div className="modHeader mobileHide">
+      <div className="modHeader fadeContent mobileHide">
         <div className="modInfo">
           <h2>{module.name}</h2>
           <p>{module.description}</p>
@@ -35,7 +35,7 @@ export default async function Page({ params }) {
           <HeaderButton icon="Info" name="info" />
         </div>
       </div>
-      <iframe src={`/modules/${slug}/index.html`} />
+      <iframe className="fadeContent" src={`/modules/${slug}/index.html`} />
     </div>
   );
 }

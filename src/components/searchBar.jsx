@@ -37,7 +37,7 @@ export default function SearchBar() {
   const desktopSearch = () => {
     return (
       <div
-        className="homeSearchContainer"
+        className="homeSearchContainer fadeContent"
         onClick={() => {
           document.getElementById("homeSearch").focus();
         }}
@@ -63,7 +63,10 @@ export default function SearchBar() {
           </a>
           <HeaderButton icon="Search" name="Search" onClick={toggleSearch} />
         </MobileHeader>
-        <div className="homeSearchContainer hidden" id="mobileSearch">
+        <div
+          className="homeSearchContainer fadeContent hidden"
+          id="mobileSearch"
+        >
           <div className="mobileSearchContainer">
             <HeaderButton icon="Search" name="Search" />
             <input

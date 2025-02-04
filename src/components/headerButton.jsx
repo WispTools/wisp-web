@@ -15,7 +15,7 @@ export default function HeaderButton({ icon, name, onClick = () => {} }) {
   }, [icon]);
 
   return (
-    <button name={name} className="headerButton" onClick={onClick}>
+    <button name={name} className="headerButton fadeContent" onClick={onClick}>
       {Icon && <Icon />}
     </button>
   );

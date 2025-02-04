@@ -13,8 +13,8 @@
 }
 
 .headerButton svg {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   color: var(--secondary-color);
 }
 
@@ -55,5 +55,10 @@
   .headerButton svg {
     width: 24px;
     height: 24px;
+  }
+
+  .headerButton svg {
+    width: 36px;
+    height: 36px;
   }
 }

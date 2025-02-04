@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="home">
       <SearchBar />
-      <div className="homeContent">
+      <div className="homeContent fadeContent">
         <div className="homeHeader">
           <h3>Welcome to Wisp!</h3>
           <h1>The Web Interface for Simple Programs</h1>
