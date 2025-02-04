@@ -102,11 +102,17 @@
   padding: 16px;
   border: 1px solid var(--half-color);
   border-radius: var(--container-border-radius);
+  background-color: var(--background-color);
   cursor: pointer;
+  text-align: left;
   text-decoration: none;
   align-items: center;
   outline: 0px solid var(--half-color);
   transition: background-color 0.05s ease-in-out, outline 0.05s ease-in-out;
+}
+
+.modLink p {
+  font-family: var(--sans-serif);
 }
 
 @media (hover: hover) {
