@@ -1,6 +1,6 @@
 export default function Recent() {
   return (
-    <div>
+    <div className="fadeContent">
       <h1>Recent</h1>
     </div>
   );

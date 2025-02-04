@@ -1,6 +1,6 @@
 export default function Settings() {
   return (
-    <div>
+    <div className="fadeContent">
       <h1>Settings</h1>
       <h4>Change language</h4>
       <p>
