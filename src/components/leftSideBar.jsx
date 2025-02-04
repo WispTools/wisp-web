@@ -65,7 +65,7 @@ export default function LeftSideBar() {
         <li>
           <a
             className="sideBarLink"
-            href="https://github.com/EthanHazel/wisp"
+            href="https://github.com/WispTools/wisp-web"
             target="_blank"
           >
             <Github />
