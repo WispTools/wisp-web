@@ -7,7 +7,7 @@ import MobileHeader from "./mobileHeader";
 import HeaderButton from "./headerButton";
 import Logo from "./logo";
 
-export default function SearchBar() {
+export default function SearchBar({ searchQuery, setSearchQuery }) {
   const [isMobile, setIsMobile] = useState(false); // Default to false
   const [isMounted, setIsMounted] = useState(false); // Track if component is mounted
 
@@ -34,6 +34,10 @@ export default function SearchBar() {
     mobileSearch.querySelector("input").value = "";
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   const desktopSearch = () => {
     return (
       <div
@@ -48,6 +52,8 @@ export default function SearchBar() {
           name="Search"
           id="homeSearch"
           placeholder="Search..."
+          value={searchQuery}
+          onChange={handleSearchChange}
         />
       </div>
     );
@@ -74,6 +80,8 @@ export default function SearchBar() {
               name="Search"
               id="homeSearch"
               placeholder="Search..."
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
             <HeaderButton icon="X" name="X" onClick={toggleSearch} />
           </div>

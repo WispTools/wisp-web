@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // Updated import for Next.js 13+
 import Transition from "./transition"; // Ensure this utility function is defined
 
-export default function ModLink({ slug }) {
+export default function ModLink({ slug, searchQuery }) {
   const [moduleData, setModuleData] = useState(null);
   const [IconComponent, setIconComponent] = useState(null);
 
@@ -31,6 +31,22 @@ export default function ModLink({ slug }) {
 
   if (!moduleData || !IconComponent) {
     return <p>Loading...</p>;
+  }
+
+  if (searchQuery && searchQuery.length > 0) {
+    console.log(searchQuery);
+    const searchQueryLower = searchQuery.toLowerCase();
+    const slugLower = slug.toLowerCase();
+    const nameLower = moduleData.name.toLowerCase();
+    const descriptionLower = moduleData.description.toLowerCase();
+
+    if (
+      !slugLower.includes(searchQueryLower) &&
+      !nameLower.includes(searchQueryLower) &&
+      !descriptionLower.includes(searchQueryLower)
+    ) {
+      return <></>;
+    }
   }
 
   return (
