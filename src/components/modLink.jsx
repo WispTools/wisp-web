@@ -39,11 +39,13 @@ export default function ModLink({ slug, searchQuery }) {
     const slugLower = slug.toLowerCase();
     const nameLower = moduleData.name.toLowerCase();
     const descriptionLower = moduleData.description.toLowerCase();
+    const tagsLower = moduleData.tags.map((tag) => tag.toLowerCase());
 
     if (
       !slugLower.includes(searchQueryLower) &&
       !nameLower.includes(searchQueryLower) &&
-      !descriptionLower.includes(searchQueryLower)
+      !descriptionLower.includes(searchQueryLower) &&
+      !tagsLower.some((tag) => tag.includes(searchQueryLower))
     ) {
       return <></>;
     }
