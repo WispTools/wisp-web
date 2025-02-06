@@ -62,6 +62,8 @@ jobs:
           WEB_VERSION=$(node -p "require('./package.json').version")
           WEB_OFFSET=$(node -p "require('./verOffset').versionOffset")
 
+          WEB_COMMIT_AMOUNT=$(git rev-list --count HEAD)
+
           WEB_MAJOR_VERSION=$(echo $WEB_VERSION | cut -d. -f1)
           WEB_MINOR_VERSION=$((WEB_COMMIT_AMOUNT - $WEB_OFFSET))
           echo "Commit amount: $WEB_COMMIT_AMOUNT"
