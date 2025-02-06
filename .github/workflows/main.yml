@@ -41,8 +41,6 @@ jobs:
       - name: Read package.json version and increment
         id: version
         run: |
-          cat public/package.json
-          cat public/verOffset.json
           MOD_VERSION=$(node -p "require('./public/package.json').version")
           MOD_OFFSET=$(node -p "require('./public/verOffset').versionOffset")
 
