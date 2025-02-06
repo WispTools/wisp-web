@@ -20,7 +20,10 @@ jobs:
       - name: Clone wisp-modules into public
         run: |
           mkdir -p public/modules
-          git clone --depth 1 https://github.com/WispTools/wisp-modules.git temp_wisp_modules
+          git clone --depth 0 https://github.com/WispTools/wisp-modules.git temp_wisp_modules
+          cd temp_wisp_modules
+          MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
+          cd ..
           mv temp_wisp_modules/* temp_wisp_modules/.* public/ 2>/dev/null || true
           rm -rf temp_wisp_modules
           echo "Successfully cloned wisp-modules into the public folder."
@@ -45,8 +48,8 @@ jobs:
           MOD_OFFSET=$(node -p "require('./public/verOffset').versionOffset")
 
           MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
-          MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
           MOD_MINOR_VERSION=$((MOD_COMMIT_AMOUNT - $MOD_OFFSET))
+
           echo "Commit amount: $MOD_COMMIT_AMOUNT"
           echo "Minor version: $MOD_MINOR_VERSION"
           echo "Major version: $MOD_MAJOR_VERSION"
@@ -58,6 +61,7 @@ jobs:
           WEB_MAJOR_VERSION=$(echo $WEB_VERSION | cut -d. -f1)
           WEB_COMMIT_AMOUNT=$(git rev-list --count HEAD)
           WEB_MINOR_VERSION=$((WEB_COMMIT_AMOUNT - $WEB_OFFSET))
+
           echo "Commit amount: $WEB_COMMIT_AMOUNT"
           echo "Minor version: $WEB_MINOR_VERSION"
           echo "Major version: $WEB_MAJOR_VERSION"
