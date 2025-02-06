@@ -41,7 +41,7 @@ jobs:
       - name: Read package.json version and increment
         id: version
         run: |
-          ls
+          ls -la src/
           MOD_VERSION=$(node =p "require('./modules/package.json').version")
           MOD_OFFSET=$(node -p "require('./modules/verOffset').versionOffset")
 
