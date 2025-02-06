@@ -41,16 +41,30 @@ jobs:
       - name: Read package.json version and increment
         id: version
         run: |
-          VERSION=$(node -p "require('./package.json').version")
-          OFFSET=$(node -p "require('./verOffset').versionOffset")
-          MAJOR_VERSION=$(echo $VERSION | cut -d. -f1)
-          COMMIT_AMOUNT=$(git rev-list --count HEAD)
-          MINOR_VERSION=$((COMMIT_AMOUNT - $OFFSET))
-          echo "Commit amount: $COMMIT_AMOUNT"
-          echo "Minor version: $MINOR_VERSION"
-          echo "Major version: $MAJOR_VERSION"
-          echo "Whole version: $MAJOR_VERSION.$MINOR_VERSION"
-          echo "new_version=$MAJOR_VERSION.$MINOR_VERSION" >> $GITHUB_OUTPUT
+          MOD_VERSION=$(node =p "require('./public/modules/package.json').version")
+          MOD_OFFSET=$(node -p "require('./public/modules/verOffset').versionOffset")
+
+          MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
+          MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
+          MOD_MINOR_VERSION=$((MOD_COMMIT_AMOUNT - $MOD_OFFSET))
+          echo "Commit amount: $MOD_COMMIT_AMOUNT"
+          echo "Minor version: $MOD_MINOR_VERSION"
+          echo "Major version: $MOD_MAJOR_VERSION"
+          echo "Whole version: $MOD_MAJOR_VERSION.$MOD_MINOR_VERSION"
+
+          WEB_VERSION=$(node -p "require('./package.json').version")
+          WEB_OFFSET=$(node -p "require('./verOffset').versionOffset")
+
+          WEB_MAJOR_VERSION=$(echo $WEB_VERSION | cut -d. -f1)
+          WEB_COMMIT_AMOUNT=$(git rev-list --count HEAD)
+          WEB_MINOR_VERSION=$((WEB_COMMIT_AMOUNT - $WEB_OFFSET))
+          echo "Commit amount: $WEB_COMMIT_AMOUNT"
+          echo "Minor version: $WEB_MINOR_VERSION"
+          echo "Major version: $WEB_MAJOR_VERSION"
+          echo "Whole version: $WEB_MAJOR_VERSION.$WEB_MINOR_VERSION"
+
+          echo "web_version=$WEB_MAJOR_VERSION.$WEB_MINOR_VERSION" >> $GITHUB_OUTPUT
+          echo "mod_version=$MOD_MAJOR_VERSION.$MOD_MINOR_VERSION" >> $GITHUB_OUTPUT
 
       - name: Create distData directory
         run: |
@@ -58,7 +72,7 @@ jobs:
 
       - name: Build project version file
         run: |
-          echo '{"webVer": "${{ steps.version.outputs.new_version }}", "modVer": "WIP"}' > src/distData/version.json
+          echo '{"webVer": "${{ steps.version.outputs.web_version }}", "modVer": "${{ steps.version.outputs.mod_version }}"}' > src/distData/version.json
           cat src/distData/version.json
 
       - name: Install Vercel CLI
