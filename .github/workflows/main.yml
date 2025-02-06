@@ -44,9 +44,11 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
           OFFSET=$(node -p "require('./verOffset').versionOffset")
           MAJOR_VERSION=$(echo $VERSION | cut -d. -f1)
-          MINOR_VERSION=$(((git rev-list --count HEAD) - $OFFSET))
-          echo "Minor version: $(git rev-list --count HEAD)"
-          echo "Major version: $VERSION"
+          COMMIT_AMOUNT=$(git rev-list --count HEAD)
+          MINOR_VERSION=$((COMMIT_AMOUNT - $OFFSET))
+          echo "Commit amount: $COMMIT_AMOUNT"
+          echo "Minor version: $MINOR_VERSION"
+          echo "Major version: $MAJOR_VERSION"
           echo "Whole version: $MAJOR_VERSION.$MINOR_VERSION"
           echo "new_version=$MAJOR_VERSION.$MINOR_VERSION" >> $GITHUB_OUTPUT
 
