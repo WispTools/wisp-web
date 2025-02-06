@@ -11,6 +11,8 @@ import Transition from "./transition";
 
 import "@/style/sideBars.css";
 
+import wispInfo from "@/distData/version.json";
+
 export default function LeftSideBar() {
   const pathname = usePathname();
   const router = useRouter();
@@ -64,7 +66,7 @@ export default function LeftSideBar() {
         </li>
       </ul>
       <div className="sideBarFooter">
-        Web v1.0.0 <Code size={14} /> Module v1.0.0
+        Web v{wispInfo.version} <Code size={14} /> Module v1.0.0
       </div>
     </div>
   );

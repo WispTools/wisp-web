@@ -36,6 +36,23 @@ jobs:
           echo "Removed .webpurge file"
           echo "Successfully removed unwanted files from wisp-modules."
 
+      - name: Read package.json version and increment
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          COMMIT_COUNT=$(git rev-list --count HEAD)
+          MAJOR_VERSION=$(echo $VERSION | cut -d. -f1)
+          MINOR_VERSION=$(echo $VERSION | cut -d. -f2)
+          NEW_MINOR_VERSION=$((MINOR_VERSION + COMMIT_COUNT))
+          echo "Current version: $VERSION"
+          echo "New version: $MAJOR_VERSION.$NEW_MINOR_VERSION"
+          echo "::set-output name=new_version::$MAJOR_VERSION.$NEW_MINOR_VERSION"
+
+      - name: Build project version file
+        run: |
+          echo '{"version": "${{ steps.version.outputs.new_version }}"}' > src/distData/version.json
+          cat src/distData/version.json
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
