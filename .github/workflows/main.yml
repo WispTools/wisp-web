@@ -58,7 +58,7 @@ jobs:
 
       - name: Build project version file
         run: |
-          echo '{"version": "${{ steps.version.outputs.new_version }}"}' > src/distData/version.json
+          echo '{"webVer": "${{ steps.version.outputs.new_version }}", "modVer": "WIP"}' > src/distData/version.json
           cat src/distData/version.json
 
       - name: Install Vercel CLI

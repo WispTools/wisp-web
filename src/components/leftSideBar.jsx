@@ -66,7 +66,7 @@ export default function LeftSideBar() {
         </li>
       </ul>
       <div className="sideBarFooter">
-        Web v{wispInfo.version} <Code size={14} /> Module v1.0.0
+        Web v{wispInfo.webVer} <Code size={14} /> Module v1.0.0
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ console.log(
 if (!fs.existsSync("src/distData/version.json")) {
   fs.writeFileSync(
     "src/distData/version.json",
-    JSON.stringify({ version: "Dev" })
+    JSON.stringify({ webVer: "Dev", modVer: "Dev" })
   );
   console.log("Created distData/version.json");
 }
