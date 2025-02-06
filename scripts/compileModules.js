@@ -44,3 +44,12 @@ fs.writeFileSync("src/distData/modules.json", JSON.stringify(moduleData));
 console.log(
   "Compiled modules successfully! Data saved to distData/modules.json"
 );
+
+// check if distData/version.json exists, if not, create it
+if (!fs.existsSync("src/distData/version.json")) {
+  fs.writeFileSync(
+    "src/distData/version.json",
+    JSON.stringify({ version: "Dev" })
+  );
+  console.log("Created distData/version.json");
+}
