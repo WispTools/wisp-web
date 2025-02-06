@@ -4,14 +4,7 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-import {
-  Home,
-  Settings,
-  Heart,
-  Github,
-  GitPullRequestArrow,
-  History,
-} from "lucide-react";
+import { Home, Settings, Heart, GitPullRequestArrow, Code } from "lucide-react";
 
 import Logo from "./logo";
 import Transition from "./transition";
@@ -53,15 +46,13 @@ export default function LeftSideBar() {
         </li>
         <li>
           <button
-            className={getLinkClass("/recent")}
-            onClick={() => Transition(router, "/recent", pathname)}
+            className={getLinkClass("/contribute")}
+            onClick={() => Transition(router, "/contribute", pathname)}
           >
-            <History />
-            <span className="linkName">Recent</span>
+            <GitPullRequestArrow />
+            <span className="linkName">Contributing</span>
           </button>
         </li>
-      </ul>
-      <ul className="sideBarLinkContainer sideBarFooter">
         <li>
           <button
             className={getLinkClass("/settings")}
@@ -71,26 +62,10 @@ export default function LeftSideBar() {
             <span className="linkName">Settings</span>
           </button>
         </li>
-        <li>
-          <button
-            className={getLinkClass("/contribute")}
-            onClick={() => Transition(router, "/contribute", pathname)}
-          >
-            <GitPullRequestArrow />
-            <span className="linkName">Contributing</span>
-          </button>
-        </li>
-        <li>
-          <a
-            className="sideBarLink"
-            href="https://github.com/WispTools/wisp-web"
-            target="_blank"
-          >
-            <Github />
-            <span className="linkName">Source Code</span>
-          </a>
-        </li>
       </ul>
+      <div className="sideBarFooter">
+        Web v1.0.0 <Code size={14} /> Module v1.0.0
+      </div>
     </div>
   );
 }
