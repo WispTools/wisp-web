@@ -48,6 +48,10 @@ jobs:
           echo "New version: $MAJOR_VERSION.$NEW_MINOR_VERSION"
           echo "::set-output name=new_version::$MAJOR_VERSION.$NEW_MINOR_VERSION"
 
+      - name: Create distData directory
+        run: |
+          mkdir -p src/distData
+
       - name: Build project version file
         run: |
           echo '{"version": "${{ steps.version.outputs.new_version }}"}' > src/distData/version.json
