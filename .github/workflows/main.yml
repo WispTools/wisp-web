@@ -42,8 +42,8 @@ jobs:
         id: version
         run: |
           ls -la public/
-          MOD_VERSION=$(node =p "require('./modules/package.json').version")
-          MOD_OFFSET=$(node -p "require('./modules/verOffset').versionOffset")
+          MOD_VERSION=$(node =p "require('./public/package.json').version")
+          MOD_OFFSET=$(node -p "require('./public/verOffset').versionOffset")
 
           MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
           MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
