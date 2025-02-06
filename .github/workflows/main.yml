@@ -44,9 +44,9 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
           MAJOR_VERSION=$(echo $VERSION | cut -d. -f1)
           MINOR_VERSION=$(git rev-list --count HEAD)
-          echo $(git rev-list --count HEAD)
-          echo "Current version: $VERSION"
-          echo "New version: $MAJOR_VERSION.$MINOR_VERSION"
+          echo "Minor version: $(git rev-list --count HEAD)""
+          echo "Major version: $VERSION"
+          echo "Whole version: $MAJOR_VERSION.$MINOR_VERSION"
           echo "new_version=$MAJOR_VERSION.$MINOR_VERSION" >> $GITHUB_OUTPUT
 
       - name: Create distData directory
