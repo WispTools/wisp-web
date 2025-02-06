@@ -17,12 +17,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Clone wisp-modules into public
+      - name: Get wisp-modules version and move files into public/modules
         run: |
           mkdir -p public/modules
           git clone https://github.com/WispTools/wisp-modules.git temp_wisp_modules
           cd temp_wisp_modules
+
           MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
+          MOD_VERSION=$(node -p "require('./package.json').version")
+          MOD_OFFSET=$(node -p "require('./verOffset').versionOffset")
+
+          MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
+          MOD_MINOR_VERSION=$((MOD_COMMIT_AMOUNT - $MOD_OFFSET))
+          echo "Commit amount: $MOD_COMMIT_AMOUNT"
+          echo "Minor version: $MOD_MINOR_VERSION"
+          echo "Major version: $MOD_MAJOR_VERSION"
+          echo "Whole version: $MOD_MAJOR_VERSION.$MOD_MINOR_VERSION"
+
+          echo "mod_version=$MOD_MAJOR_VERSION.$MOD_MINOR_VERSION" >> $GITHUB_OUTPUT
+
           cd ..
           mv temp_wisp_modules/* temp_wisp_modules/.* public/ 2>/dev/null || true
           rm -rf temp_wisp_modules
@@ -44,15 +57,6 @@ jobs:
       - name: Read package.json version and increment
         id: version
         run: |
-          MOD_VERSION=$(node -p "require('./public/package.json').version")
-          MOD_OFFSET=$(node -p "require('./public/verOffset').versionOffset")
-
-          MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
-          MOD_MINOR_VERSION=$((MOD_COMMIT_AMOUNT - $MOD_OFFSET))
-          echo "Commit amount: $MOD_COMMIT_AMOUNT"
-          echo "Minor version: $MOD_MINOR_VERSION"
-          echo "Major version: $MOD_MAJOR_VERSION"
-          echo "Whole version: $MOD_MAJOR_VERSION.$MOD_MINOR_VERSION"
 
           WEB_VERSION=$(node -p "require('./package.json').version")
           WEB_OFFSET=$(node -p "require('./verOffset').versionOffset")
@@ -65,7 +69,6 @@ jobs:
           echo "Whole version: $WEB_MAJOR_VERSION.$WEB_MINOR_VERSION"
 
           echo "web_version=$WEB_MAJOR_VERSION.$WEB_MINOR_VERSION" >> $GITHUB_OUTPUT
-          echo "mod_version=$MOD_MAJOR_VERSION.$MOD_MINOR_VERSION" >> $GITHUB_OUTPUT
 
       - name: Create distData directory
         run: |
