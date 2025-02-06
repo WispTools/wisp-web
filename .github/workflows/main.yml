@@ -18,6 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Get wisp-modules version and move files into public/modules
+        id: mod_ver
         run: |
           mkdir -p public/modules
           git clone https://github.com/WispTools/wisp-modules.git temp_wisp_modules
@@ -55,7 +56,7 @@ jobs:
           echo "Successfully removed unwanted files from wisp-modules."
 
       - name: Read package.json version and increment
-        id: version
+        id: web_ver
         run: |
 
           WEB_VERSION=$(node -p "require('./package.json').version")
@@ -76,7 +77,7 @@ jobs:
 
       - name: Build project version file
         run: |
-          echo '{"webVer": "${{ steps.version.outputs.web_version }}", "modVer": "${{ steps.version.outputs.mod_version }}"}' > src/distData/version.json
+          echo '{"webVer": "${{ steps.web_ver.outputs.web_version }}", "modVer": "${{ steps.mod_ver.outputs.mod_version }}"}' > src/distData/version.json
           cat src/distData/version.json
 
       - name: Install Vercel CLI
