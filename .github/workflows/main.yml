@@ -49,7 +49,6 @@ jobs:
 
           MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
           MOD_MINOR_VERSION=$((MOD_COMMIT_AMOUNT - $MOD_OFFSET))
-
           echo "Commit amount: $MOD_COMMIT_AMOUNT"
           echo "Minor version: $MOD_MINOR_VERSION"
           echo "Major version: $MOD_MAJOR_VERSION"
@@ -61,7 +60,6 @@ jobs:
           WEB_MAJOR_VERSION=$(echo $WEB_VERSION | cut -d. -f1)
           WEB_COMMIT_AMOUNT=$(git rev-list --count HEAD)
           WEB_MINOR_VERSION=$((WEB_COMMIT_AMOUNT - $WEB_OFFSET))
-
           echo "Commit amount: $WEB_COMMIT_AMOUNT"
           echo "Minor version: $WEB_MINOR_VERSION"
           echo "Major version: $WEB_MAJOR_VERSION"
