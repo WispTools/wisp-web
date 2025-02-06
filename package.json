@@ -1,6 +1,6 @@
 {
   "name": "wisp",
-  "version": "1",
+  "version": "0",
   "private": true,
   "scripts": {
     "compile": "node ./scripts/compileModules.js",

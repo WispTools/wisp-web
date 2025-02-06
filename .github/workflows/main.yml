@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch the entire commit history
+          fetch-depth: 0
 
       - name: Clone wisp-modules into public
         run: |
@@ -41,27 +41,13 @@ jobs:
       - name: Read package.json version and increment
         id: version
         run: |
-          # Get the current version from package.json
           VERSION=$(node -p "require('./package.json').version")
+          OFFSET=$(node -p "require('./verOffset').versionOffset")
           MAJOR_VERSION=$(echo $VERSION | cut -d. -f1)
-
-          # Get the previous commit's version from the git history
-          PREVIOUS_VERSION=$(git show HEAD~1:package.json 2>/dev/null | node -p "JSON.parse(require('fs').readFileSync(0)).version" || echo "0.0.0")
-          PREVIOUS_MAJOR_VERSION=$(echo $PREVIOUS_VERSION | cut -d. -f1)
-
-          # Determine the minor version
-          if [ "$MAJOR_VERSION" -gt "$PREVIOUS_MAJOR_VERSION" ]; then
-            # Major version increased, reset minor version to 0
-            MINOR_VERSION=0
-          else
-            # Major version unchanged, increment minor version based on commit count
-            MINOR_VERSION=$(git rev-list --count HEAD)
-          fi
-
-          # Output the new version
-          echo "Current version: $VERSION"
-          echo "Previous version: $PREVIOUS_VERSION"
-          echo "New version: $MAJOR_VERSION.$MINOR_VERSION"
+          MINOR_VERSION=$(($MINOR_VERSION - $OFFSET))
+          echo "Minor version: $(git rev-list --count HEAD)"
+          echo "Major version: $VERSION"
+          echo "Whole version: $MAJOR_VERSION.$MINOR_VERSION"
           echo "new_version=$MAJOR_VERSION.$MINOR_VERSION" >> $GITHUB_OUTPUT
 
       - name: Create distData directory
