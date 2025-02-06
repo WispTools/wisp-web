@@ -20,7 +20,7 @@ jobs:
       - name: Clone wisp-modules into public
         run: |
           mkdir -p public/modules
-          git clone --depth 1 https://github.com/WispTools/wisp-modules.git temp_wisp_modules
+          git clone https://github.com/WispTools/wisp-modules.git temp_wisp_modules
           cd temp_wisp_modules
           MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
           cd ..
