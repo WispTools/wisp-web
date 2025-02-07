@@ -1,4 +1,4 @@
-import LeftSideBar from "@/components/leftSideBar";
+import SideBar from "@/components/sideBar";
 import { Analytics } from "@vercel/analytics/react";
 
 import "@/style/main.css";
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
       </head>
       <body onTouchStart="">
         <div className="main">
-          <LeftSideBar />
+          <SideBar />
           <div className="content">{children}</div>
         </div>
         <Analytics />

@@ -9,18 +9,18 @@ import { Home, Settings, Heart, GitPullRequestArrow, Code } from "lucide-react";
 import Logo from "./logo";
 import Transition from "./transition";
 
-import "@/style/sideBars.css";
+import "@/style/sideBar.css";
 
 import wispInfo from "@/distData/version.json";
 
-export default function LeftSideBar() {
+export default function SideBar() {
   const pathname = usePathname();
   const router = useRouter();
   const getLinkClass = (path) =>
     `sideBarLink${path === pathname ? " active" : ""}`;
 
   return (
-    <div className="leftSideBar">
+    <div className="sideBar">
       <ul className="sideBarLinkContainer">
         <li className="sideBarHeader">
           <Link className="sideBarLogo" href="/">
