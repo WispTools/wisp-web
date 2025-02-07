@@ -1,4 +1,5 @@
-import Transition from "@/components/transition";
+import Link from "next/link";
+import { Home } from "lucide-react";
 
 import "@/style/notFound.css";
 
@@ -11,7 +12,11 @@ export default function NotFound() {
         draggable="false"
       />
       <h1>Well $#!%, that's a 404</h1>
-      <p>The page you are looking for does not exist, or has been removed</p>
+      <p>The page you are looking for does not exist, or has been removed.</p>
+      <Link href="/">
+        <Home />
+        Bring me home please :(
+      </Link>
     </div>
   );
 }

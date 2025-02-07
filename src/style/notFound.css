@@ -10,8 +10,36 @@
   width: 300px;
   height: 300px;
   opacity: 50%;
+  margin: 24px;
+}
+
+.notFoundContainer h1 {
+  margin: 24px;
 }
 
 .notFoundContainer p {
   color: var(--secondary-color);
+  margin: 24px;
+}
+
+.notFoundContainer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: var(--input-border-radius);
+  background: none;
+  color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+  text-decoration: none;
+  outline: 1px solid var(--primary-color);
+  height: fit-content;
+  margin: 24px;
+}
+
+.notFoundContainer a:active {
+  background-color: var(--primary-color);
+  color: var(--background-color);
 }
