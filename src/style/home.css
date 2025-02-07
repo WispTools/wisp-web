@@ -111,6 +111,25 @@
   transition: background-color 0.05s ease-in-out, outline 0.05s ease-in-out;
 }
 
+.modLink.loading {
+  height: 66px;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.modLink.loading svg {
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }1
+}
+
 @media (hover: hover) {
   .modLink:hover {
     background-color: var(--quarter-color);

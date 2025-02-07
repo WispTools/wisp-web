@@ -1,14 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Updated import for Next.js 13+
-import Transition from "./transition"; // Ensure this utility function is defined
+import { useRouter } from "next/navigation";
+
+import { Loader2 } from "lucide-react";
+
+import Transition from "./transition";
 
 export default function ModLink({ slug, searchQuery }) {
   const [moduleData, setModuleData] = useState(null);
   const [IconComponent, setIconComponent] = useState(null);
 
-  const router = useRouter(); // Correctly initialized router
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +33,11 @@ export default function ModLink({ slug, searchQuery }) {
   }, [slug]);
 
   if (!moduleData || !IconComponent) {
-    return <p>Loading...</p>;
+    return (
+      <div className="modLink loading">
+        <Loader2 />
+      </div>
+    );
   }
 
   if (searchQuery && searchQuery.length > 0) {
@@ -53,7 +60,7 @@ export default function ModLink({ slug, searchQuery }) {
 
   return (
     <button
-      onClick={() => Transition(router, `/mod/${slug}`)} // Ensure Transition is defined
+      onClick={() => Transition(router, `/mod/${slug}`)}
       className="modLink"
     >
       <span className="modLinkIcon">
