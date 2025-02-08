@@ -40,52 +40,86 @@ export async function GET(request) {
             width: "100%",
             height: "100%",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-between",
+            padding: "4rem",
           }}
           className="metaImage"
         >
-          <img src="https://www.wisp.tools/assets/meta/logo.png" alt="logo" />
-          <p style={{ fontSize: "1.5rem", color: "#717171" }}>
-            wisp.tools/mod/{slug}
-          </p>
-          <h1 style={{ fontSize: "3rem", color: "#DDD", marginBottom: "1rem" }}>
-            {title}
-          </h1>
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              padding: "2rem",
-              aspectRatio: "1/1",
-              borderRadius: "1rem",
-              border: "1px solid #717171",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
             }}
           >
-            <svg
-              width="100"
-              height="100"
-              viewBox={viewBox}
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              {elementMatches.map((match, index) => {
-                const tagName = match[1];
-                const attributesString = match[2];
-
-                const props = Object.fromEntries(
-                  [...attributesString.matchAll(/([\w-]+)="([^"]+)"/g)].map(
-                    ([, key, value]) => [key, value]
-                  )
-                );
-
-                return React.createElement(tagName, { key: index, ...props });
-              })}
-            </svg>
+            <img
+              src="https://www.wisp.tools/assets/meta/logo.png"
+              alt="logo"
+              style={{ width: "197px", height: "55px" }}
+            />
+            <p style={{ fontSize: "1.5rem", color: "#717171" }}>
+              wisp.tools/mod/{slug}
+            </p>
           </div>
-          <p style={{ fontSize: "1.5rem", color: "#717171" }}>{description}</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <h1 style={{ fontSize: "3rem", color: "#DDD", margin: "0" }}>
+                {title}
+              </h1>
+              <p style={{ fontSize: "1.5rem", color: "#717171" }}>
+                {description}
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "2rem",
+                aspectRatio: "1/1",
+                borderRadius: "1rem",
+                border: "2px solid #444",
+              }}
+            >
+              <svg
+                width="100"
+                height="100"
+                viewBox={viewBox}
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {elementMatches.map((match, index) => {
+                  const tagName = match[1];
+                  const attributesString = match[2];
+
+                  const props = Object.fromEntries(
+                    [...attributesString.matchAll(/([\w-]+)="([^"]+)"/g)].map(
+                      ([, key, value]) => [key, value]
+                    )
+                  );
+
+                  return React.createElement(tagName, { key: index, ...props });
+                })}
+              </svg>
+            </div>
+          </div>
         </div>
       ),
       {
