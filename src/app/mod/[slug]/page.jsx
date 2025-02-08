@@ -17,6 +17,9 @@ export async function generateMetadata({ params }) {
   return {
     title: moduleFound.name + " ▸ Wisp",
     description: moduleFound.description,
+    openGraph: {
+      images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
+    },
   };
 }
 
