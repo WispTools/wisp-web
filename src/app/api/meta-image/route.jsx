@@ -1,6 +1,13 @@
 import { ImageResponse } from "next/og";
 import React from "react";
 
+const font = fetch(
+  new URL(
+    "https://www.wisp.tools/assets/fonts/Inter/Inter.ttf",
+    import.meta.url
+  )
+).then((res) => res.arrayBuffer());
+
 export const runtime = "edge";
 
 function PascalCaseToKebabCase(str) {
@@ -76,12 +83,28 @@ export async function GET(request) {
               style={{
                 display: "flex",
                 flexDirection: "column",
+                flex: "1 1 auto",
+                marginRight: "1rem",
               }}
             >
-              <h1 style={{ fontSize: "3rem", color: "#DDD", margin: "0" }}>
+              <h1
+                style={{
+                  fontSize: "3rem",
+                  color: "#DDD",
+                  margin: "0",
+                  fontWeight: "bold",
+                }}
+              >
                 {title}
               </h1>
-              <p style={{ fontSize: "1.5rem", color: "#717171" }}>
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  color: "#717171",
+                  overflowWrap: "break-word",
+                  wordBreak: "break-all",
+                }}
+              >
                 {description}
               </p>
             </div>
@@ -93,14 +116,16 @@ export async function GET(request) {
                 aspectRatio: "1/1",
                 borderRadius: "1rem",
                 border: "2px solid #444",
+                color: "#DDD",
+                flexShrink: 0,
               }}
             >
               <svg
                 width="100"
                 height="100"
                 viewBox={viewBox}
+                stroke="currentColor"
                 fill="none"
-                stroke="white"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -125,6 +150,13 @@ export async function GET(request) {
       {
         width: 1200,
         height: 630,
+        fonts: [
+          {
+            name: "Inter",
+            data: await font,
+            style: "normal",
+          },
+        ],
       }
     );
   } catch (error) {
