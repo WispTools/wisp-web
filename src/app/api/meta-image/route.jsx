@@ -3,7 +3,7 @@ import React from "react";
 
 const font = fetch(
   new URL(
-    "https://www.wisp.tools/assets/fonts/Inter/Inter.ttf",
+    "https://www.wisp.tools/assets/fonts/Inter/Inter.otf",
     import.meta.url
   )
 ).then((res) => res.arrayBuffer());
