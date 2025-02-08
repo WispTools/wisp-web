@@ -6,4 +6,4 @@
 
 ## WIP
 
-This GitHub repo is a work in progress and shouldn't be public, if it is then create an issue on the repo (if one doesn't already exist)
+This GitHub repo is a work in progress and shouldn't be looked at much yet. Estimated release should be March of 2025
