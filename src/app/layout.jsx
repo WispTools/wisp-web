@@ -6,6 +6,9 @@ import "@/style/main.css";
 export const metadata = {
   title: "Wisp",
   description: "Temporary website description",
+  openGraph: {
+    images: "/assets/meta/default.png",
+  },
 };
 
 export const viewport = {

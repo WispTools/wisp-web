@@ -12,6 +12,14 @@ import modules from "@/distData/modules.json";
 import "@/style/notFound.css";
 import "@/style/modPage.css";
 
+export async function generateMetadata({ params }) {
+  const moduleFound = modules.find((module) => module.slug === params.slug);
+  return {
+    title: moduleFound.name + " ▸ Wisp",
+    description: moduleFound.description,
+  };
+}
+
 export default async function Page({ params }) {
   const { slug } = await params;
 
