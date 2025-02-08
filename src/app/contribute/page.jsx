@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function Contribute() {
   return (
     <div className="fadeContent">
       <h1>Contribute</h1>
-      <a href="https://discord.gg/BkxtVZsf4E" target="_blank">
+      <Link href="/discord" target="_blank">
         Discord Server
-      </a>
+      </Link>
     </div>
   );
 }

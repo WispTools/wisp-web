@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `https://wisptools.vercel.app/sitemap.xml`,
+    sitemap: `https://www.wisp.tools/sitemap.xml`,
   };
 }
