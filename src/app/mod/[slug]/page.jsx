@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
   const moduleFound = modules.find((module) => module.slug === slug);
   return {
     title: moduleFound.name + " ▸ Wisp",
+    appleMobileWebAppTitle: moduleFound.slug,
     description: moduleFound.description,
     icons: {
       apple: `/api/app-image?iconName=${moduleFound.icon}`,
