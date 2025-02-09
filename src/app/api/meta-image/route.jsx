@@ -100,7 +100,7 @@ export async function GET(request) {
             >
               <h1
                 style={{
-                  fontSize: "3rem",
+                  fontSize: "4rem",
                   color: "#DDD",
                   margin: "0",
                   fontWeight: "bold",
@@ -124,17 +124,18 @@ export async function GET(request) {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "2rem",
+                padding: "3rem",
                 aspectRatio: "1/1",
                 borderRadius: "1rem",
                 border: "2px solid #444",
                 color: "#DDD",
                 flexShrink: 0,
+                marginLeft: "4rem",
               }}
             >
               <svg
-                width="100"
-                height="100"
+                width="150"
+                height="150"
                 viewBox={viewBox}
                 stroke="currentColor"
                 fill="none"
