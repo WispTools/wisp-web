@@ -17,7 +17,6 @@ export async function generateMetadata({ params }) {
   const moduleFound = modules.find((module) => module.slug === slug);
   return {
     title: moduleFound.name,
-    applicationName: moduleFound.slug,
     description: moduleFound.description,
     icons: {
       apple: `/api/app-image?iconName=${moduleFound.icon}`,
@@ -28,6 +27,11 @@ export async function generateMetadata({ params }) {
         "/assets/favicon/favicon.ico",
         "/assets/favicon/favicon.svg",
       ],
+    },
+    appleWebApp: {
+      title: moduleFound.slug,
+      statusBarStyle: "black-translucent",
+      startupImage: "/assets/meta/appleStartup.png",
     },
     openGraph: {
       images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
