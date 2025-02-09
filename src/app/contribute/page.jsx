@@ -7,6 +7,8 @@ import {
   GitPullRequestArrow,
 } from "lucide-react";
 
+import MobileHeader from "@/components/mobileHeader";
+
 import "@/style/contribute.css";
 import "@/style/home.css";
 
