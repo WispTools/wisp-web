@@ -53,8 +53,8 @@ export async function GET(request) {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "4rem",
+            fontFamily: "Inter, sans-serif",
           }}
-          className="metaImage"
         >
           <div
             style={{
@@ -70,7 +70,14 @@ export async function GET(request) {
               alt="logo"
               style={{ width: "197px", height: "55px" }}
             />
-            <p style={{ fontSize: "1.5rem", color: "#717171" }}>
+            <p
+              style={{
+                fontSize: "1.5rem",
+                color: "#717171",
+                fontFamily: "Syne, sans-serif",
+                fontWeight: "bold",
+              }}
+            >
               wisp.tools/mod/{slug}
             </p>
           </div>
@@ -97,6 +104,7 @@ export async function GET(request) {
                   color: "#DDD",
                   margin: "0",
                   fontWeight: "bold",
+                  fontFamily: "Syne, sans-serif",
                 }}
               >
                 {title}
