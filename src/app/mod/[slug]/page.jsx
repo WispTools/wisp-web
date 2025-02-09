@@ -32,6 +32,12 @@ export async function generateMetadata({ params }) {
     openGraph: {
       images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
     },
+    alternates: {
+      canonical: `/mod/${slug}`,
+      languages: {
+        "en-US": `/mod/${slug}`,
+      },
+    },
   };
 }
 
