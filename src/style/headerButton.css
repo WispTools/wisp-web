@@ -12,6 +12,11 @@
   padding: 8px;
 }
 
+.headerSpacer {
+  width: 48px;
+  height: 48px;
+}
+
 .headerButton svg {
   width: 24px;
   height: 24px;

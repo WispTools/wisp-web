@@ -20,3 +20,7 @@ export default function HeaderButton({ icon, name, onClick = () => {} }) {
     </button>
   );
 }
+
+export function HeaderSpacer() {
+  return <div className="headerSpacer fadeContent"></div>;
+}

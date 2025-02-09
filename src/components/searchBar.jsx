@@ -2,10 +2,13 @@
 
 import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import MobileHeader from "./mobileHeader";
 import HeaderButton from "./headerButton";
 import Logo from "./logo";
+import Transition from "./transition";
 
 export default function SearchBar({ searchQuery, setSearchQuery }) {
   const [isMobile, setIsMobile] = useState(false); // Default to false
@@ -60,10 +63,16 @@ export default function SearchBar({ searchQuery, setSearchQuery }) {
   };
 
   const mobileSearch = () => {
+    const router = useRouter();
+    const pathname = usePathname();
     return (
       <>
         <MobileHeader>
-          <HeaderButton icon="Settings" name="Settings" />
+          <HeaderButton
+            onClick={() => Transition(router, "/settings", pathname)}
+            icon="Settings"
+            name="Settings"
+          />
           <a href="/" className="logo">
             <Logo size={"48px"} />
           </a>
