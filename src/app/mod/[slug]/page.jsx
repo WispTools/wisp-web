@@ -36,6 +36,13 @@ export async function generateMetadata({ params }) {
     openGraph: {
       images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: moduleFound.name,
+      description: moduleFound.description,
+      images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
+      creator: "@EthanHazelGD",
+    },
     alternates: {
       canonical: `/mod/${slug}`,
       languages: {
