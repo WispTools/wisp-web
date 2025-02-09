@@ -20,6 +20,13 @@ export async function generateMetadata({ params }) {
     description: moduleFound.description,
     icons: {
       apple: `/api/app-image?iconName=${moduleFound.icon}`,
+      shortcut: [
+        "/assets/favicon/96x.png",
+        "/assets/favicon/192x.png",
+        "/assets/favicon/512x.png",
+        "/assets/favicon/favicon.ico",
+        "/assets/favicon/favicon.svg",
+      ],
     },
     openGraph: {
       images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
