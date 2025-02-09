@@ -1,11 +1,15 @@
 import { ImageResponse } from "next/og";
 import React from "react";
 
-const font = fetch(
+const Inter = fetch(
   new URL(
     "https://www.wisp.tools/assets/fonts/Inter/Inter.otf",
     import.meta.url
   )
+).then((res) => res.arrayBuffer());
+
+const Syne = fetch(
+  new URL("https://www.wisp.tools/assets/fonts/Syne/Syne.otf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export const runtime = "edge";
@@ -153,8 +157,13 @@ export async function GET(request) {
         fonts: [
           {
             name: "Inter",
-            data: await font,
+            data: await Inter,
             style: "normal",
+          },
+          {
+            name: "Syne",
+            data: await Syne,
+            style: "bold",
           },
         ],
       }
