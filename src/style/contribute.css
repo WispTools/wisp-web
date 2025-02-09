@@ -83,3 +83,12 @@ hr {
   background-color: var(--primary-color);
   color: var(--background-color);
 }
+
+@media screen and (max-width: 1024px) {
+  .contributeLinks {
+    flex-direction: column;
+  }
+  .contributeLink {
+    width: calc(100% - 32px);
+  }
+}
