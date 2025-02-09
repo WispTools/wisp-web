@@ -13,12 +13,13 @@ import "@/style/notFound.css";
 import "@/style/modPage.css";
 
 export async function generateMetadata({ params }) {
-  const moduleFound = modules.find((module) => module.slug === params.slug);
+  const { slug } = await params;
+  const moduleFound = modules.find((module) => module.slug === slug);
   return {
     title: moduleFound.name + " ▸ Wisp",
     description: moduleFound.description,
     icons: {
-      icon: `/api/app-image?iconName=${moduleFound.icon}`,
+      apple: `/api/app-image?iconName=${moduleFound.icon}`,
     },
     openGraph: {
       images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
