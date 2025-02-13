@@ -15,7 +15,7 @@ hr {
   width: 100%;
   height: 1px;
   border: none;
-  background-color: var(--quarter-color);
+  background-color: var(--half-color);
   margin: 16px 0;
 }
 
@@ -46,7 +46,7 @@ hr {
 .infoTag {
   display: inline-block;
   padding: 0.5em 1em;
-  background-color: var(--quarter-color);
+  background-color: var(--half-color);
   color: var(--primary-color);
   border-radius: var(--input-border-radius);
   font-size: 0.8em;
@@ -62,7 +62,7 @@ hr {
 .infoContributor {
   display: inline-block;
   padding: 0.5em 1em;
-  border: 1px solid var(--quarter-color);
+  border: 1px solid var(--half-color);
   color: var(--primary-color);
   border-radius: var(--input-border-radius);
   font-size: 0.8em;
@@ -71,12 +71,13 @@ hr {
 
 @media (hover: hover) {
   .infoContributor:hover {
-    background-color: var(--quarter-color);
+    background-color: var(--half-color);
   }
 }
 
 .infoContributor:active {
-  background-color: var(--half-color);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
 }
 
 @media screen and (max-width: 1024px) {
