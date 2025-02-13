@@ -4,6 +4,7 @@ import { Home } from "lucide-react";
 
 import Logo from "@/components/logo";
 import BackButton from "@/components/backButton";
+import InfoButton from "@/components/infoButton";
 import MobileHeader from "@/components/mobileHeader";
 import HeaderButton from "@/components/headerButton";
 
@@ -93,8 +94,8 @@ export default async function Page({ params }) {
           <p>{module.description}</p>
         </div>
         <div className="modActions">
+          <InfoButton module={module} />
           <HeaderButton icon="Heart" name="favorite" />
-          <HeaderButton icon="Info" name="info" />
         </div>
       </div>
       <iframe className="fadeContent" src={`/modules/${slug}/index.html`} />

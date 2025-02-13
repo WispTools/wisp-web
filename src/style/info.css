@@ -1,0 +1,88 @@
+.infoModal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.infoLabel {
+  color: var(--secondary-color);
+  font-size: 0.8em;
+  margin-top: 8px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: var(--quarter-color);
+  margin: 16px 0;
+}
+
+.infoHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoName {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.infoLink {
+  font-size: 0.8em;
+  color: var(--secondary-color);
+}
+
+.infoTagContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.infoTag {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: var(--quarter-color);
+  color: var(--primary-color);
+  border-radius: var(--input-border-radius);
+  font-size: 0.8em;
+}
+
+.infoContributorContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.infoContributor {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid var(--quarter-color);
+  color: var(--primary-color);
+  border-radius: var(--input-border-radius);
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .infoContributor:hover {
+    background-color: var(--quarter-color);
+  }
+}
+
+.infoContributor:active {
+  background-color: var(--half-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .infoHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

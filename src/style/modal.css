@@ -1,3 +1,15 @@
+.modalRootContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 .modalContainer {
   position: fixed;
   display: flex;
@@ -49,8 +61,10 @@
   background: none;
 }
 
-.modalClose:hover {
-  background-color: var(--half-color);
+@media (hover: hover) {
+  .modalClose:hover {
+    background-color: var(--half-color);
+  }
 }
 
 .modalClose:active {

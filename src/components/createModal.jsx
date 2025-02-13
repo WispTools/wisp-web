@@ -11,6 +11,7 @@ export function CreateModal(title, children) {
   }
 
   const modalRootContainer = document.createElement("div");
+  modalRootContainer.classList.add("modalRootContainer");
   contentElement.appendChild(modalRootContainer);
 
   const root = createRoot(modalRootContainer);
