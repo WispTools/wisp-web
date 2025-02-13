@@ -2,7 +2,7 @@ import ModLink from "./modLink";
 
 import modules from "@/distData/modules.json";
 
-export default function Gallery({ searchQuery }) {
+export default function Gallery({ searchQuery, favoritesQuery }) {
   const results = () => {
     return (
       <>
@@ -11,6 +11,7 @@ export default function Gallery({ searchQuery }) {
             key={module.slug}
             slug={module.slug}
             searchQuery={searchQuery}
+            favoritesQuery={favoritesQuery}
           />
         ))}
       </>

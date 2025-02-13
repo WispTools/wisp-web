@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 
 import Transition from "./transition";
 
-export default function ModLink({ slug, searchQuery }) {
+export default function ModLink({ slug, searchQuery, favoritesQuery }) {
   const [moduleData, setModuleData] = useState(null);
   const [IconComponent, setIconComponent] = useState(null);
 
@@ -41,7 +41,6 @@ export default function ModLink({ slug, searchQuery }) {
   }
 
   if (searchQuery && searchQuery.length > 0) {
-    console.log(searchQuery);
     const searchQueryLower = searchQuery.toLowerCase();
     const slugLower = slug.toLowerCase();
     const nameLower = moduleData.name.toLowerCase();
@@ -54,6 +53,12 @@ export default function ModLink({ slug, searchQuery }) {
       !descriptionLower.includes(searchQueryLower) &&
       !tagsLower.some((tag) => tag.includes(searchQueryLower))
     ) {
+      return <></>;
+    }
+  }
+
+  if (favoritesQuery) {
+    if (!favoritesQuery.includes(slug)) {
       return <></>;
     }
   }

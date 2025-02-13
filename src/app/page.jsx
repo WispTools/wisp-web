@@ -20,7 +20,7 @@ export default function Home() {
           <h1>The Web Interface for Simple Programs</h1>
           <h3>Currently hosting {modules.length} modules</h3>
         </div>
-        <Gallery searchQuery={searchQuery} />
+        <Gallery searchQuery={searchQuery} favoritesQuery={false} />
       </div>
     </div>
   );
