@@ -86,7 +86,7 @@ export default async function Page({ params }) {
       <MobileHeader>
         <BackButton />
         <Logo size={"48px"} />
-        <HeaderButton icon="Menu" name="menu" />
+        <InfoButton module={module} />
       </MobileHeader>
       <div className="modHeader fadeContent mobileHide">
         <div className="modInfo">
