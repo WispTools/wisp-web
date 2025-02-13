@@ -1,6 +1,8 @@
+"use client";
+
 import MobileHeader from "@/components/mobileHeader";
 import BackButton from "@/components/backButton";
-import Modal from "@/components/modal";
+import { CreateModal } from "@/components/createModal";
 import { HeaderSpacer } from "@/components/headerButton";
 import Logo from "@/components/logo";
 
@@ -37,30 +39,24 @@ export default function Settings() {
         </p>
         <h4>Credits</h4>
         <p>View every module's contributors.</p>
+        <hr />
+        <h4>Debug Stuff</h4>
+        <button
+          onClick={() =>
+            CreateModal(
+              "Test Modal",
+              <>
+                <h1>This is a test modal</h1>
+                <p>
+                  This is a test modal that was invoked from the settings page
+                </p>
+              </>
+            )
+          }
+        >
+          Create Test Modal
+        </button>
       </div>
-      <Modal modalTitle="testModal">
-        <p>Yo check out my cool modal</p>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-        <h1>GIANT TETX</h1>
-      </Modal>
     </>
   );
 }

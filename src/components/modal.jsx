@@ -1,14 +1,28 @@
-import { X } from "lucide-react";
+"use client";
 
+import { X } from "lucide-react";
 import "@/style/modal.css";
 
-export default function Modal({ modalTitle = "Unnamed Modal", children }) {
+export default function Modal({
+  modalTitle = "Unnamed Modal",
+  children,
+  onClose,
+}) {
+  const closeModal = () => {
+    if (onClose) {
+      onClose();
+    } else {
+      const modalContainer = document.querySelector(".modalContainer");
+      modalContainer?.remove();
+    }
+  };
+
   return (
     <div className="modalContainer">
       <div className="modal">
         <div className="modalHeader">
           <div className="modalTitle">{modalTitle}</div>
-          <button className="modalClose">
+          <button className="modalClose" onClick={closeModal}>
             <X />
           </button>
         </div>

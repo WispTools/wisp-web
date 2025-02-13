@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 0;
+  bottom: 0;
   left: 361px;
   width: calc(100% - 360px);
   height: 100%;
@@ -31,6 +31,7 @@
   width: calc(100% - 32px);
   padding: 16px;
   border-bottom: 1px solid var(--half-color);
+  background-color: var(--background-color);
 }
 
 .modalClose {
@@ -63,7 +64,7 @@
   flex-direction: column;
   gap: 16px;
   width: calc(100% - 32px);
-  max-height: calc(100vh - 99px - 64px);
+  max-height: calc(100vh - 99px - 512px);
   overflow-y: auto;
 }
 
