@@ -1,5 +1,6 @@
 import MobileHeader from "@/components/mobileHeader";
 import BackButton from "@/components/backButton";
+import Modal from "@/components/modal";
 import { HeaderSpacer } from "@/components/headerButton";
 import Logo from "@/components/logo";
 
@@ -14,24 +15,11 @@ export default function Settings() {
         <HeaderSpacer />
       </MobileHeader>
       <div className="fadeContent">
-        <h1>Settings</h1>
-        <h4>Change language</h4>
+        <h4>Send Analytics</h4>
         <p>
-          All text is translated from English to your native language
-          automatically by Google Translate, this may lead to translation
-          errors.
-        </p>
-        <h4>Turn off recently used</h4>
-        <p>
-          We store your recently used modules in your browser local storage for
-          faster access, if you don't want that you can turn it off here and
-          we'll stop saving any activety.
-        </p>
-        <h4>Turn off max page width</h4>
-        <p>
-          The max width of the page is 1920px by default to avoid stretching too
-          wide on large screens. If you don't want that you can turn it off
-          here.
+          Wisp uses Vercel analytics to track some basic info like visitors and
+          page views. If you want more explanations on how it works you can read
+          more in the privacy policy.
         </p>
         <hr />
         <h4>Report a bug</h4>
@@ -50,6 +38,29 @@ export default function Settings() {
         <h4>Credits</h4>
         <p>View every module's contributors.</p>
       </div>
+      <Modal modalTitle="testModal">
+        <p>Yo check out my cool modal</p>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+        <h1>GIANT TETX</h1>
+      </Modal>
     </>
   );
 }

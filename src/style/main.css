@@ -103,7 +103,7 @@ body {
   height: auto;
   width: calc(100% - 360px);
   color: var(--primary-color);
-  margin-left: calc(360px + 1px);
+  margin-left: 361px;
   border: 1px solid var(--quarter-color);
   border-style: none solid none solid;
 }
