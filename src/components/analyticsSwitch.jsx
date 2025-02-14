@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { useEffect } from "react";
 
 export default function AnalyticsSwitch() {
-  let sendAnalytics;
+  let sendAnalytics = "false";
   useEffect(() => {
     sendAnalytics = localStorage.getItem("sendAnalytics");
     if (sendAnalytics === null) {

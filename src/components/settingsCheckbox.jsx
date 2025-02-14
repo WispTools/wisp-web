@@ -3,23 +3,24 @@
 import { useEffect, useState } from "react";
 
 export default function SettingsCheckbox({ settingName, refresh = false }) {
-  const [checked, setChecked] = useState(
-    localStorage.getItem(settingName) === "true"
-  );
-  const adjustSetting = () => {
-    localStorage.setItem(settingName, checked);
-  };
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    const storedValue = localStorage.getItem(settingName);
+    if (storedValue !== null) {
+      setChecked(storedValue === "true");
+    }
+  }, [settingName]);
+
   const onChange = (e) => {
     const isChecked = e.target.checked;
     setChecked(isChecked);
+    localStorage.setItem(settingName, isChecked);
     if (refresh) {
       window.location.reload();
     }
-    adjustSetting();
   };
-  useEffect(() => {
-    adjustSetting();
-  }, [checked]);
+
   return (
     <div
       className={"settingsCheckboxContainer" + (checked ? " checked" : "")}
