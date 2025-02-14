@@ -75,7 +75,7 @@ hr {
   }
 }
 
-.settingsAction svg {
+.settingsAction button svg {
   width: 24px;
   height: 24px;
   color: var(--secondary-color);
@@ -89,7 +89,7 @@ hr {
   cursor: pointer;
   background-color: var(--background-color);
   outline: 1px solid var(--half-color);
-  width: 55px;
+  min-width: 55px;
   height: 30px;
   border-radius: 999px;
   transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
