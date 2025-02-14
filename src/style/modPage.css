@@ -51,12 +51,6 @@ iframe {
 }
 
 @media screen and (max-width: 1024px) {
-  html {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-  }
-
   .modPage {
     position: fixed;
     bottom: 0;
