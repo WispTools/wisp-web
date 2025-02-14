@@ -58,8 +58,9 @@ iframe {
     right: 0;
     top: 0;
     width: 100%;
+    min-height: auto;
+    margin-top: 115px;
     height: 100%;
-    /* Mobile Safari is wack */
   }
 
   iframe {

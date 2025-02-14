@@ -194,12 +194,6 @@
 
   .home {
     padding: 0px;
-    overflow: hidden;
-  }
-
-  .homeContent {
-    height: calc(100% - 112px);
-    overflow-y: scroll;
   }
 
   .homeSearchContainer {

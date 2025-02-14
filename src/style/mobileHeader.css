@@ -1,5 +1,6 @@
 #mobileHeader {
   display: flex;
+  position: fixed;
   overflow: hidden;
   gap: 12px;
   flex-direction: row;
@@ -11,9 +12,10 @@
   background-color: var(--background-color);
   border-style: none;
   border-bottom: 1px solid var(--half-color);
-  outline: 0px solid var(--half-color);
   box-shadow: none;
   width: calc(100% - 64px);
+  min-height: 50px;
+  z-index: 2;
   padding: 32px;
 }
 
