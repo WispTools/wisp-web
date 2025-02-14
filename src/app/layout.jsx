@@ -1,5 +1,5 @@
 import SideBar from "@/components/sideBar";
-import { Analytics } from "@vercel/analytics/react";
+import AnalyticsSwitch from "@/components/analyticsSwitch";
 
 import "@/style/main.css";
 
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
           <SideBar />
           <div className="content">{children}</div>
         </div>
-        <Analytics />
+        <AnalyticsSwitch />
       </body>
     </html>
   );
