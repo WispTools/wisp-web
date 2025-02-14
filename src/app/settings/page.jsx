@@ -1,3 +1,5 @@
+"use client";
+
 import MobileHeader from "@/components/mobileHeader";
 import BackButton from "@/components/backButton";
 import SettingsCheckbox from "@/components/settingsCheckbox";
