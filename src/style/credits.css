@@ -1,0 +1,46 @@
+.credits {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
+}
+
+.creditsDivider {
+  width: 1px;
+  height: 36px;
+  margin: 36px;
+  background-color: var(--half-color);
+}
+
+.creditsLabel {
+  display: inline-block;
+  color: var(--secondary-color);
+  font-size: 0.8em;
+  margin-top: 32px;
+}
+
+.creditsContributors {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.credits a {
+  color: var(--primary-color);
+  font-size: 1em;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin: 16px 0;
+  line-height: 0;
+}
+
+.credits a:hover {
+  text-decoration: underline;
+}

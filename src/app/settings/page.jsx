@@ -1,14 +1,19 @@
+"use client";
+
 import MobileHeader from "@/components/mobileHeader";
 import BackButton from "@/components/backButton";
 import SettingsCheckbox from "@/components/settingsCheckbox";
 import { HeaderSpacer } from "@/components/headerButton";
 import Logo from "@/components/logo";
+import Transition from "@/components/transition";
+import { useRouter } from "next/navigation";
 
 import { SquareArrowOutUpRight } from "lucide-react";
 
 import "@/style/settings.css";
 
 export default function Settings() {
+  const router = useRouter();
   return (
     <>
       <MobileHeader>
@@ -81,7 +86,7 @@ export default function Settings() {
             <p>View every module's contributors.</p>
           </div>
           <div className="settingsAction">
-            <button>
+            <button onClick={() => Transition(router, "/settings/credits")}>
               <SquareArrowOutUpRight />
             </button>
           </div>
