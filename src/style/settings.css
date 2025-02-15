@@ -84,6 +84,12 @@ hr {
   width: 24px;
   height: 24px;
   color: var(--secondary-color);
+  transition: color 0.1s ease-in-out;
+}
+
+.settingsAction button:active {
+  background-color: var(--half-color);
+  transition: none;
 }
 
 .settingsCheckboxContainer {
@@ -122,7 +128,7 @@ hr {
 
 .settingsCheckboxContainer.checked .settingsCheckboxKnob {
   background-color: black;
-  margin-left: 27px;
+  margin-left: 28px;
 }
 
 @media (hover: hover) {

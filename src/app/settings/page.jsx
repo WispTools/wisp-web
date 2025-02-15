@@ -34,44 +34,37 @@ export default function Settings() {
             </p>
           </div>
           <div className="settingsAction">
-            <SettingsCheckbox settingName="sendAnalytics" />
+            <SettingsCheckbox settingName="sendAnalytics" refresh />
           </div>
         </div>
         <hr />
         <div className="settingsContainer">
           <div className="settingsInfo">
-            <h4>Report a bug</h4>
+            <h4>Request a feature or report a bug</h4>
             <p>
-              If you find a bug or have a suggestion you can report it here.
+              If you have a feature request or want to report a bug, you can do
+              so here through the GitHub issues page. You will need a GitHub
+              account to post an issue.
             </p>
           </div>
           <div className="settingsAction">
-            <button>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/WispTools/wisp-modules/issues/new"
+                )
+              }
+            >
               <SquareArrowOutUpRight />
             </button>
           </div>
         </div>
-        <div className="settingsContainer">
-          <div className="settingsInfo">
-            <h4>Request a feature</h4>
-            <p>
-              If you would like a feature to be added to Wisp you can request it
-              here.
-            </p>
-          </div>
-          <div className="settingsAction">
-            <button>
-              <SquareArrowOutUpRight />
-            </button>
-          </div>
-        </div>
-        <hr />
         <div className="settingsContainer">
           <div className="settingsInfo">
             <h4>Privacy Policy</h4>
             <p>
-              We don't collect any data from you, all data is stored in your
-              browser local storage.
+              Read our privacy policy to learn more about how Wisp uses
+              analytics and other basic data like your liked modules.
             </p>
           </div>
           <div className="settingsAction">
