@@ -4,8 +4,7 @@
   gap: 32px;
   max-width: 1024px;
   margin: 0 auto;
-  height: 100vh;
-  overflow-y: scroll;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
