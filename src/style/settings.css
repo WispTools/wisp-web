@@ -131,6 +131,14 @@ hr {
   margin-left: 28px;
 }
 
+.settingsFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--secondary-color);
+  font-size: 0.8em;
+}
+
 @media (hover: hover) {
   .settingsCheckboxContainer:hover {
     outline: 2px solid var(--half-color);

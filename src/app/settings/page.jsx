@@ -14,6 +14,7 @@ import "@/style/settings.css";
 
 export default function Settings() {
   const router = useRouter();
+  const year = new Date().getFullYear();
   return (
     <>
       <MobileHeader>
@@ -61,20 +62,6 @@ export default function Settings() {
         </div>
         <div className="settingsContainer">
           <div className="settingsInfo">
-            <h4>Privacy Policy</h4>
-            <p>
-              Read our privacy policy to learn more about how Wisp uses
-              analytics and other basic data like your liked modules.
-            </p>
-          </div>
-          <div className="settingsAction">
-            <button>
-              <SquareArrowOutUpRight />
-            </button>
-          </div>
-        </div>
-        <div className="settingsContainer">
-          <div className="settingsInfo">
             <h4>Credits</h4>
             <p>View every module's contributors.</p>
           </div>
@@ -83,6 +70,13 @@ export default function Settings() {
               <SquareArrowOutUpRight />
             </button>
           </div>
+        </div>
+        <hr />
+        <div className="settingsFooter">
+          <p>
+            <b>Wisp</b> is an open source project licensed under GPLv3
+          </p>
+          <p>Copyright &copy; {year} Wisp Contributors</p>
         </div>
       </div>
     </>
