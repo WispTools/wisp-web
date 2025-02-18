@@ -50,13 +50,14 @@ a.sideBarLink {
   border-radius: var(--container-border-radius);
   cursor: pointer;
   transition: background-color 0.05s ease;
-  width: calc(100% - 52px);
+  width: fit-content;
   align-items: center;
   gap: 26px;
 }
 
 .sideBarHeader:hover {
   background-color: var(--quarter-color);
+  outline: 1px solid var(--half-color);
 }
 
 .sideBarLogo {
@@ -80,17 +81,20 @@ a.sideBarLink {
 }
 
 .sideBarLink:hover {
-  background-color: var(--quarter-color);
+  background-color: var(--half-color);
+  outline: 1px solid var(--half-color);
+  box-shadow: inset 0 0 64px 12px var(--quarter-color);
 }
 
 .sideBarLink:hover svg {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .sideBarLink.active {
   background-color: var(--primary-color);
-  color: var(--background-color);
   font-weight: bold;
+  box-shadow: 0 0 32px 0 var(--quarter-color);
+  color: var(--background-color);
 }
 
 .sideBarLink.active svg {
