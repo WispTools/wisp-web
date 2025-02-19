@@ -1,7 +1,3 @@
-import Link from "next/link";
-
-import { Home } from "lucide-react";
-
 import Logo from "@/components/logo";
 import BackButton from "@/components/backButton";
 import InfoButton from "@/components/infoButton";
@@ -34,7 +30,7 @@ export async function generateMetadata({ params }) {
     },
     appleWebApp: {
       title: moduleFound.slug,
-      statusBarStyle: "black-translucent",
+      statusBarStyle: "black",
       startupImage: "/assets/meta/appleStartup.png",
     },
     openGraph: {
@@ -46,12 +42,6 @@ export async function generateMetadata({ params }) {
       description: moduleFound.description,
       images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
       creator: "@EthanHazelGD",
-    },
-    alternates: {
-      canonical: `/mod/${slug}`,
-      languages: {
-        "en-US": `/mod/${slug}`,
-      },
     },
   };
 }

@@ -32,6 +32,12 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.25,
     },
+    {
+      url: "https://www.wisp.tools/docs",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.25,
+    },
   ];
 
   modules.forEach((module) => {
