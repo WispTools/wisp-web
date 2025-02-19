@@ -25,7 +25,15 @@ export default function Favorites() {
   }, []);
 
   if (likedModules === undefined) {
-    return <></>;
+    return (
+      <div className="home fadeContent">
+        <div className="homeHeader">
+          <h3>Your Favorites</h3>
+          <h1>Modules you liked!</h1>
+          <h3>You have 0 favorite modules</h3>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -33,7 +41,10 @@ export default function Favorites() {
       <div className="homeHeader">
         <h3>Your Favorites</h3>
         <h1>Modules you liked!</h1>
-        <h3>You have {likedModules.length} favorite modules</h3>
+        <h3>
+          You have {likedModules.length} favorite{" "}
+          {likedModules.length === 1 ? "module" : "modules"}
+        </h3>
       </div>
       <Gallery favoritesQuery={likedModules} />
     </div>
