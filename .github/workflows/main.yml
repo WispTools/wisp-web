@@ -17,7 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Step 1: Clone and prepare wisp-modules
       - name: Clone wisp-modules repository
         id: clone_wisp_modules
         run: |
@@ -25,7 +24,6 @@ jobs:
           git clone https://github.com/WispTools/wisp-modules.git temp_wisp_modules
           echo "Successfully cloned wisp-modules repository."
 
-      # Step 2: Calculate wisp-modules version
       - name: Calculate wisp-modules version
         id: calculate_mod_version
         run: |
@@ -46,18 +44,20 @@ jobs:
 
           cd ..
 
-      # Step 3: Move wisp-modules files to public directory
       - name: Move wisp-modules files to public directory
         run: |
           mv temp_wisp_modules/* temp_wisp_modules/.* public/ 2>/dev/null || true
           rm -rf temp_wisp_modules
           echo "Successfully moved wisp-modules files to the public folder."
 
-      # Step 4: Verify cloned files
+      - name: Rename modules to raw_mod
+        run: |
+          mv public/modules public/raw_mod
+          echo "Successfully renamed modules to raw_mod."
+
       - name: Verify cloned files
         run: ls -la public/modules
 
-      # Step 5: Remove unwanted files from wisp-modules
       - name: Remove unwanted files from wisp-modules
         run: |
           while IFS= read -r line; do
@@ -68,7 +68,6 @@ jobs:
           echo "Removed .webpurge file"
           echo "Successfully removed unwanted files from wisp-modules."
 
-      # Step 6: Calculate wisp-web version
       - name: Calculate wisp-web version
         id: calculate_web_version
         run: |
@@ -85,30 +84,24 @@ jobs:
 
           echo "web_version=$WEB_MAJOR_VERSION.$WEB_MINOR_VERSION" >> $GITHUB_OUTPUT
 
-      # Step 7: Create distData directory
       - name: Create distData directory
         run: |
           mkdir -p src/distData
 
-      # Step 8: Build project version file
       - name: Build project version file
         run: |
           echo '{"webVer": "${{ steps.calculate_web_version.outputs.web_version }}", "modVer": "${{ steps.calculate_mod_version.outputs.mod_version }}"}' > src/distData/version.json
           cat src/distData/version.json
 
-      # Step 9: Install Vercel CLI
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
-      # Step 10: Pull Vercel environment information
       - name: Pull Vercel environment information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Step 11: Build project artifacts
       - name: Build project artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Step 12: Deploy project artifacts to Vercel
       - name: Deploy project artifacts to Vercel
         run: |
           OUTPUT=$(du --inodes -d 5 .vercel/output)

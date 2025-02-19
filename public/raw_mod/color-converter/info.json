@@ -1,0 +1,8 @@
+{
+  "name": "Color Converter",
+  "description": "Convert colors between HEX, RGB, HSV, HSL, and CMYK",
+  "icon": "Palette",
+  "contributors": ["EthanHazel"],
+  "tags": ["palette", "conversion"],
+  "attributions": null
+}

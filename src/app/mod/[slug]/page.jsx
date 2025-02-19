@@ -98,7 +98,7 @@ export default async function Page({ params }) {
           <LikeButton slug={module.slug} />
         </div>
       </div>
-      <iframe className="fadeContent" src={`/modules/${slug}/index.html`} />
+      <iframe className="fadeContent" src={`/raw_mod/${slug}/index.html`} />
     </div>
   );
 }

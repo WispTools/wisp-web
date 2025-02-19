@@ -41,6 +41,8 @@ iframe {
 .modHeader p {
   margin: 0 0 0 36px;
   color: var(--secondary-color);
+  text-overflow: ellipsis;
+  white-space: collapse;
 }
 
 .modHeader h2 {
@@ -48,6 +50,9 @@ iframe {
   margin: 0;
   border-right: 1px solid var(--half-color);
   text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 1024px) {
