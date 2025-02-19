@@ -20,7 +20,7 @@
 # production
 /build
 /src/distData
-/public/modules
+/public/raw_mod
 /public/scripts
 /public/style
 
