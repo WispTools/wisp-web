@@ -132,7 +132,7 @@ h6 {
 
 .header h1 {
   margin: 0;
-  padding: 12px;
+  padding: 12px 0;
   width: 100%;
 }
 
@@ -141,7 +141,7 @@ h6 {
   color: var(--secondary-color);
   font-family: var(--monospace);
   margin: 0;
-  padding: 12px;
+  padding: 12px 0;
   width: 100%;
 }
 
