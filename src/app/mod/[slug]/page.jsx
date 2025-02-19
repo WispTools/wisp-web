@@ -10,11 +10,22 @@ import modules from "@/distData/modules.json";
 import "@/style/modPage/modPage.css";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   const moduleFound = modules.find((module) => module.slug === slug);
+
   if (!moduleFound) {
-    return;
+    return {
+      title: "Not Found",
+      description: "The module you are looking for does not exist.",
+    };
   }
+
+  const metaImageUrl = `/api/meta-image?title=${encodeURIComponent(
+    moduleFound.name
+  )}&description=${encodeURIComponent(moduleFound.description)}&iconName=${
+    moduleFound.icon
+  }&slug=${moduleFound.slug}`;
+
   return {
     title: moduleFound.name,
     description: moduleFound.description,
@@ -34,14 +45,38 @@ export async function generateMetadata({ params }) {
       startupImage: "/assets/meta/appleStartup.png",
     },
     openGraph: {
-      images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
+      type: "website",
+      url: `https://www.wisp.tools/mod/${slug}`,
+      title: moduleFound.name,
+      description: moduleFound.description,
+      site_name: "Your Site Name",
+      images: metaImageUrl,
     },
     twitter: {
       card: "summary_large_image",
       title: moduleFound.name,
       description: moduleFound.description,
-      images: `/api/meta-image?title=${moduleFound.name}&description=${moduleFound.description}&iconName=${moduleFound.icon}&slug=${moduleFound.slug}`,
+      images: metaImageUrl,
       creator: "@EthanHazelGD",
+    },
+    alternates: {
+      canonical: `https://www.wisp.tools/mod/${slug}`,
+      languages: {
+        "en-US": `https://www.wisp.tools/mod/${slug}`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }

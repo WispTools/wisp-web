@@ -5,40 +5,49 @@ import "@/style/main.css";
 
 export const metadata = {
   metadataBase: new URL("https://www.wisp.tools"),
-  assets: ["https://www.wisp.tools/assets"],
   openGraph: {
     title: "Wisp - The Web Interface for Simple Programs",
     description:
       "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place. It's designed to be easy to use, where anyone can create and add their own modules.",
-    images: "/assets/meta/default.png",
+    images: [
+      {
+        url: "https://www.wisp.tools/assets/meta/default.png",
+        alt: "Wisp - The Web Interface for Simple Programs",
+      },
+    ],
     siteName: "Wisp",
     locale: "en-US",
     type: "website",
+    url: "https://www.wisp.tools",
   },
   twitter: {
     card: "summary_large_image",
     title: "Wisp - The Web Interface for Simple Programs",
     description:
       "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place. It's designed to be easy to use, where anyone can create and add their own modules.",
-    images: { url: "/assets/meta/default.png", alt: "Wisp" },
+    images: {
+      url: "https://www.wisp.tools/assets/meta/default.png",
+      alt: "Wisp - The Web Interface for Simple Programs",
+    },
     creator: "@EthanHazelGD",
   },
   appleWebApp: {
     title: "Wisp",
     statusBarStyle: "black-translucent",
-    startupImage: "/assets/meta/appleStartup.png",
+    startupImage: "https://www.wisp.tools/assets/meta/appleStartup.png",
+    capable: true,
   },
   icons: {
-    icon: "/assets/favicon/favicon.svg",
+    icon: "https://www.wisp.tools/assets/favicon/favicon.svg",
     shortcut: [
-      "/assets/favicon/96x.png",
-      "/assets/favicon/192x.png",
-      "/assets/favicon/512x.png",
-      "/assets/favicon/favicon.ico",
+      "https://www.wisp.tools/assets/favicon/96x.png",
+      "https://www.wisp.tools/assets/favicon/192x.png",
+      "https://www.wisp.tools/assets/favicon/512x.png",
+      "https://www.wisp.tools/assets/favicon/favicon.ico",
     ],
-    apple: "/assets/favicon/apple.png",
+    apple: "https://www.wisp.tools/assets/favicon/apple.png",
   },
-  manifest: "/assets/favicon/site.webmanifest",
+  manifest: "https://www.wisp.tools/assets/favicon/site.webmanifest",
   robots: {
     index: true,
     follow: true,
@@ -52,18 +61,16 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  category: "productivity",
   title: {
     template: "%s ▸ Wisp",
     default: "Wisp",
   },
-  creator: "Ethan Hazel",
   description:
     "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place. It's designed to be easy to use, where anyone can create and add their own modules.",
   alternates: {
-    canonical: "/",
+    canonical: "https://www.wisp.tools/",
     languages: {
-      "en-US": "/",
+      "en-US": "https://www.wisp.tools/",
     },
   },
 };
