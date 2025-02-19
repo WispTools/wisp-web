@@ -10,7 +10,7 @@ import modules from "@/distData/modules.json";
 import "@/style/modPage/modPage.css";
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const moduleFound = modules.find((module) => module.slug === slug);
 
   if (!moduleFound) {
