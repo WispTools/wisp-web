@@ -56,7 +56,9 @@ jobs:
           echo "Successfully renamed modules to raw_mod."
 
       - name: Verify cloned files
-        run: ls -la public/raw_mod
+        run: |
+          ls -la public/raw_mod
+          ls public/raw_mod
 
       - name: Remove unwanted files from wisp-modules
         run: |

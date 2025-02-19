@@ -24,7 +24,7 @@ async function main() {
     console.log("Old modules.json file found, this will be overwritten");
   }
 
-  // check public/modules and fetch the names of each directory and create an array of them
+  // check public/raw_mod and fetch the names of each directory and create an array of them
   const modules = fs
     .readdirSync("public/raw_mod", { withFileTypes: true })
     .filter((file) => file.isDirectory() && file.name !== ".git")
