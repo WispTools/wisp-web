@@ -40,7 +40,7 @@ hr {
 }
 
 @media screen and (max-width: 1024px) {
-  .modLink {
+  .contributeCard .modLink {
     display: none !important;
   }
   hr {
@@ -102,13 +102,4 @@ hr {
   background-color: var(--half-color);
   outline: 1px solid var(--half-color);
   box-shadow: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .contributeLinks {
-    flex-direction: column;
-  }
-  .contributeLink {
-    width: calc(100% - 32px);
-  }
 }

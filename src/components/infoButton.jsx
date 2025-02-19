@@ -3,7 +3,7 @@
 import HeaderButton from "@/components/headerButton";
 import { CreateModal } from "@/components/createModal";
 
-import "@/style/info.css";
+import "@/style/modPage/info.css";
 
 export default function InfoButton({ module }) {
   return (

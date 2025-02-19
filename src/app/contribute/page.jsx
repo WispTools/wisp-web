@@ -7,16 +7,14 @@ import {
   GitPullRequestArrow,
 } from "lucide-react";
 
-import MobileHeader from "@/components/mobileHeader";
-
 import "@/style/contribute.css";
-import "@/style/home.css";
+import "@/style/home/modLink.css";
 
 export default function Contribute() {
   return (
     <div className="contributeContainer fadeContent">
       <div className="contributeCard">
-        <div className="homeHeader">
+        <div className="header">
           <h1>Contributing</h1>
           <h3 className="contributeCard">
             If you are interested in contributing to Wisp, we would love to have

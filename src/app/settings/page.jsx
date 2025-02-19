@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 import { SquareArrowOutUpRight } from "lucide-react";
 
-import "@/style/settings.css";
+import "@/style/settings/settings.css";
 
 export default function Settings() {
   const router = useRouter();

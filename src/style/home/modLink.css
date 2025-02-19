@@ -1,0 +1,105 @@
+.modLink {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--half-color);
+  border-radius: var(--container-border-radius);
+  background-color: var(--background-color);
+  box-shadow: inset 0 8px 16px -16px var(--quarter-color);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  align-items: center;
+  outline: 0px solid var(--half-color);
+  transition: background-color 0.05s ease-in-out, outline 0.05s ease-in-out;
+}
+
+.modLink.loading {
+  height: 66px;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.modLink.loading svg {
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (hover: hover) {
+  .modLink:hover {
+    outline: 2px solid var(--half-color);
+    box-shadow: inset 0 0 12px var(--quarter-color);
+  }
+
+  .modLink:hover p {
+    color: var(--primary-color);
+  }
+
+  .modLink:hover .modLinkIcon {
+    background-color: var(--quarter-color);
+  }
+}
+
+.modLink:active {
+  background-color: var(--half-color);
+  outline: 1px solid var(--half-color);
+  box-shadow: none;
+}
+
+.modLinkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  border: 1px solid var(--half-color);
+  border-radius: var(--input-border-radius);
+  color: var(--primary-color);
+  transition: background-color 0.1s ease-in-out;
+  aspect-ratio: 1 / 1;
+}
+
+.modLink:active .modLinkIcon {
+  background-color: var(--half-color);
+}
+
+.modLinkIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.modLinkInfo {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.modLinkInfo h3 {
+  font-family: var(--sans-serif);
+  color: var(--primary-color);
+  margin: 4px;
+  font-size: 18px;
+}
+
+.modLinkInfo p {
+  color: var(--secondary-color);
+  margin: 4px;
+  transition: color 0.05s ease-in-out;
+  font-family: var(--sans-serif);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .modLink {
+    border-radius: 0px;
+    border-style: none;
+    border-bottom: 1px solid var(--half-color);
+  }
+}

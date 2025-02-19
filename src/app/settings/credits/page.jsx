@@ -4,7 +4,7 @@ import Contributors from "@/components/contributors";
 import Logo from "@/components/logo";
 import BackButton from "@/components/backButton";
 
-import "@/style/credits.css";
+import "@/style/settings/credits.css";
 
 export default function Credits() {
   return (

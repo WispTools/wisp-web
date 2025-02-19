@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Gallery from "@/components/gallery";
 
-import "@/style/home.css";
+import "@/style/home/home.css";
 import "@/style/favorites.css";
 
 export default function Favorites() {
@@ -26,8 +26,8 @@ export default function Favorites() {
 
   if (likedModules === undefined) {
     return (
-      <div className="home fadeContent">
-        <div className="homeHeader">
+      <div className="favorites fadeContent">
+        <div className="header">
           <h3>Your Favorites</h3>
           <h1>Modules you liked!</h1>
           <h3>You have 0 favorite modules</h3>
@@ -37,8 +37,8 @@ export default function Favorites() {
   }
 
   return (
-    <div className="home fadeContent">
-      <div className="homeHeader">
+    <div className="favorites fadeContent">
+      <div className="header">
         <h3>Your Favorites</h3>
         <h1>Modules you liked!</h1>
         <h3>

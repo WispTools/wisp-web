@@ -57,7 +57,6 @@ hr {
 
 .settingsAction button {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: transparent;
@@ -109,6 +108,7 @@ hr {
 @media (hover: hover) {
   .settingsCheckboxContainer:hover {
     background-color: var(--quarter-color);
+    outline: 2px solid var(--half-color);
   }
 }
 
@@ -131,19 +131,16 @@ hr {
   margin-left: 28px;
 }
 
+@media (hover: hover) {
+  .settingsCheckboxContainer.checked:hover .settingsCheckboxKnob {
+    background-color: var(--half-color);
+  }
+}
+
 .settingsFooter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: var(--secondary-color);
   font-size: 0.8em;
-}
-
-@media (hover: hover) {
-  .settingsCheckboxContainer:hover {
-    outline: 2px solid var(--half-color);
-  }
-  .settingsCheckboxContainer.checked:hover .settingsCheckboxKnob {
-    background-color: var(--half-color);
-  }
 }

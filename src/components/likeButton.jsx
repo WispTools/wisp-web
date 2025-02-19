@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import HeaderButton from "./headerButton";
-import "@/style/likeButton.css";
+import "@/style/modPage/likeButton.css";
 
 export default function LikeButton({ slug }) {
   const [likedModules, setLikedModules] = useState([]);

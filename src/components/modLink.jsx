@@ -7,6 +7,8 @@ import { Loader2 } from "lucide-react";
 
 import Transition from "./transition";
 
+import "@/style/home/modLink.css";
+
 export default function ModLink({ slug, searchQuery, favoritesQuery }) {
   const [moduleData, setModuleData] = useState(null);
   const [IconComponent, setIconComponent] = useState(null);

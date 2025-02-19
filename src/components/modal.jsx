@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import "@/style/modal.css";
+import "@/style/layout/modal.css";
 
 export default function Modal({
   modalTitle = "Unnamed Modal",

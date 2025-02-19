@@ -9,7 +9,7 @@ import { Home, Settings, Heart, GitPullRequestArrow, Code } from "lucide-react";
 import Logo from "./logo";
 import Transition from "./transition";
 
-import "@/style/sideBar.css";
+import "@/style/layout/sideBar.css";
 
 import wispInfo from "@/distData/version.json";
 

@@ -1,4 +1,4 @@
-import "@/style/mobileHeader.css";
+import "@/style/layout/mobileHeader.css";
 
 export default function MobileHeader({ children, fixed }) {
   return (
