@@ -1,7 +1,0 @@
-{
-  "name": "Text Reverser",
-  "description": "Reverse any string of text",
-  "icon": "Type",
-  "contributors": ["EthanHazel"],
-  "tags": ["reverse", " swap", "type"]
-}

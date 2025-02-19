@@ -1,7 +1,0 @@
-{
-  "name": "Lorem Ipsum Generator",
-  "description": "Generates the lorem ipsum placeholder text.",
-  "icon": "Type",
-  "contributors": ["EthanHazel"],
-  "tags": ["place", "holder", "filler"]
-}
