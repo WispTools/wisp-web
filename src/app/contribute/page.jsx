@@ -16,7 +16,15 @@ export default function Contribute() {
   return (
     <div className="contributeContainer fadeContent">
       <div className="contributeCard">
-        <h1>Contributing</h1>
+        <div className="homeHeader">
+          <h1>Contributing</h1>
+          <h3 className="contributeCard">
+            If you are interested in contributing to Wisp, we would love to have
+            you! All you need to know is the basics of JavaScript and HTML. You
+            don't need to be an expert programmer, just try your best and if you
+            have any problems we will help you out along the way!
+          </h3>
+        </div>
         <button className="modLink">
           <span className="modLinkIcon">
             <GitPullRequestArrow />
@@ -26,12 +34,6 @@ export default function Contribute() {
             <p>It's easier than you think, trust me.</p>
           </div>
         </button>
-        <p className="contributeCard">
-          If you are interested in contributing to Wisp, we would love to have
-          you! All you need to know is the basics of JavaScript and HTML. You
-          don't need to be an expert programmer, just try your best and if you
-          have any problems we will help you out along the way!
-        </p>
         <div className="contributeLinks">
           <Link
             href="https://github.com/WispTools"
@@ -39,15 +41,15 @@ export default function Contribute() {
             className="contributeLink"
           >
             <CodeXml />
-            Repositories
+            <p>Repositories</p>
           </Link>
           <Link href="/docs" target="_blank" className="contributeLink">
             <BookOpen />
-            Documentation
+            <p>Documentation</p>
           </Link>
           <Link href="/discord" target="_blank" className="contributeLink">
             <MessageSquare />
-            Discord
+            <p>Discord</p>
           </Link>
         </div>
       </div>
