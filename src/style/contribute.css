@@ -39,15 +39,6 @@ hr {
   width: 100%;
 }
 
-@media screen and (max-width: 1024px) {
-  .contributeCard .modLink {
-    display: none !important;
-  }
-  hr {
-    display: none !important;
-  }
-}
-
 .contributeContainer p {
   margin: 0;
   color: var(--secondary-color);
@@ -62,4 +53,20 @@ hr {
 
 .contributeLinks a {
   width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .contributeCard .modLink {
+    display: none !important;
+  }
+  hr {
+    display: none !important;
+  }
+  .contributeLinks {
+    flex-direction: column;
+  }
+  .contributeLinks a {
+    max-width: 100%;
+    width: auto;
+  }
 }
