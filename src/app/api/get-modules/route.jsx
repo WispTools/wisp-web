@@ -1,4 +1,4 @@
-import modules from "@/distData/modules.json";
+import modules from "@/dist-data/modules.json";
 
 export const runtime = "edge";
 
