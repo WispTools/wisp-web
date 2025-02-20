@@ -1,6 +1,6 @@
-import ModLink from "./modLink";
+import ModLink from "./mod-link";
 
-import modules from "@/distData/modules.json";
+import modules from "@/dist-data/modules.json";
 
 export default function Gallery({ searchQuery, favoritesQuery }) {
   const results = () => {

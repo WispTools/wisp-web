@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 
 import Transition from "./transition";
 
-import "@/style/home/modLink.css";
+import "@/style/home/mod-link.css";
 
 export default function ModLink({ slug, searchQuery, favoritesQuery }) {
   const [moduleData, setModuleData] = useState(null);
@@ -18,7 +18,7 @@ export default function ModLink({ slug, searchQuery, favoritesQuery }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const modules = await import("@/distData/modules.json");
+        const modules = await import("@/dist-data/modules.json");
         const module = modules.default.find((mod) => mod.slug === slug);
         setModuleData(module);
 

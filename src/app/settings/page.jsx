@@ -1,9 +1,9 @@
 "use client";
 
-import MobileHeader from "@/components/mobileHeader";
-import BackButton from "@/components/backButton";
-import SettingsCheckbox from "@/components/settingsCheckbox";
-import { HeaderSpacer } from "@/components/headerButton";
+import MobileHeader from "@/components/mobile-header";
+import BackButton from "@/components/back-button";
+import SettingsCheckbox from "@/components/settings-checkbox";
+import { HeaderSpacer } from "@/components/header-button";
 import Logo from "@/components/logo";
 import Transition from "@/components/transition";
 import { useRouter } from "next/navigation";

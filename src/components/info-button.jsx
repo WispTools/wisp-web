@@ -1,9 +1,9 @@
 "use client";
 
-import HeaderButton from "@/components/headerButton";
-import { CreateModal } from "@/components/createModal";
+import HeaderButton from "@/components/header-button";
+import { CreateModal } from "@/components/create-modal";
 
-import "@/style/modPage/info.css";
+import "@/style/mod-page/info.css";
 
 export default function InfoButton({ module }) {
   return (

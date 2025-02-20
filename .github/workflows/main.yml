@@ -21,17 +21,17 @@ jobs:
         id: clone_wisp_modules
         run: |
           mkdir -p public/modules
-          git clone https://github.com/WispTools/wisp-modules.git temp_wisp_modules
+          git clone https://github.com/WispTools/wisp-modules.git temp-wisp-modules
           echo "Successfully cloned wisp-modules repository."
 
       - name: Calculate wisp-modules version
         id: calculate_mod_version
         run: |
-          cd temp_wisp_modules
+          cd temp-wisp-modules
 
           MOD_COMMIT_AMOUNT=$(git rev-list --count HEAD)
           MOD_VERSION=$(node -p "require('./package.json').version")
-          MOD_OFFSET=$(node -p "require('./verOffset').versionOffset")
+          MOD_OFFSET=$(node -p "require('./ver-offset').versionOffset")
 
           MOD_MAJOR_VERSION=$(echo $MOD_VERSION | cut -d. -f1)
           MOD_MINOR_VERSION=$((MOD_COMMIT_AMOUNT - $MOD_OFFSET))
@@ -46,19 +46,19 @@ jobs:
 
       - name: Move wisp-modules files to public directory
         run: |
-          mv temp_wisp_modules/* temp_wisp_modules/.* public/ 2>/dev/null || true
-          rm -rf temp_wisp_modules
+          mv temp-wisp-modules/* temp-wisp-modules/.* public/ 2>/dev/null || true
+          rm -rf temp-wisp-modules
           echo "Successfully moved wisp-modules files to the public folder."
 
-      - name: Rename modules to raw_mod
+      - name: Rename modules to raw-mod
         run: |
-          mv public/modules public/raw_mod
-          echo "Successfully renamed modules to raw_mod."
+          mv public/modules public/raw-mod
+          echo "Successfully renamed modules to raw-mod."
 
       - name: Verify cloned files
         run: |
-          ls -la public/raw_mod
-          ls public/raw_mod
+          ls -la public/raw-mod
+          ls public/raw-mod
 
       - name: Remove unwanted files from wisp-modules
         run: |
@@ -74,7 +74,7 @@ jobs:
         id: calculate_web_version
         run: |
           WEB_VERSION=$(node -p "require('./package.json').version")
-          WEB_OFFSET=$(node -p "require('./verOffset').versionOffset")
+          WEB_OFFSET=$(node -p "require('./ver-offset').versionOffset")
           WEB_COMMIT_AMOUNT=$(git rev-list --count HEAD)
 
           WEB_MAJOR_VERSION=$(echo $WEB_VERSION | cut -d. -f1)
@@ -86,14 +86,14 @@ jobs:
 
           echo "web_version=$WEB_MAJOR_VERSION.$WEB_MINOR_VERSION" >> $GITHUB_OUTPUT
 
-      - name: Create distData directory
+      - name: Create dist-data directory
         run: |
-          mkdir -p src/distData
+          mkdir -p src/dist-data
 
       - name: Build project version file
         run: |
-          echo '{"webVer": "${{ steps.calculate_web_version.outputs.web_version }}", "modVer": "${{ steps.calculate_mod_version.outputs.mod_version }}"}' > src/distData/version.json
-          cat src/distData/version.json
+          echo '{"webVer": "${{ steps.calculate_web_version.outputs.web_version }}", "modVer": "${{ steps.calculate_mod_version.outputs.mod_version }}"}' > src/dist-data/version.json
+          cat src/dist-data/version.json
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest

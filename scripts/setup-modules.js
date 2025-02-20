@@ -33,7 +33,7 @@ console.log("> Deleting finished");
 console.log("> Moving files");
 
 // Check if public/modules folder exists, if it does, prompt user if they want to overwrite it
-["raw_mod", "scripts", "style"].forEach((folder) => {
+["raw-mod", "scripts", "style"].forEach((folder) => {
   if (fs.existsSync(`public/${folder}`)) {
     const overwrite = prompt(
       `\x1b[33mpublic/${folder} folder already exists, do you want to overwrite it? (y/N): \x1b[0m`
@@ -59,17 +59,17 @@ console.log("> Moving finished");
 fs.rmdirSync("temp");
 console.log("> Deleted temp folder");
 
-// Rename modules to raw_mod
+// Rename modules to raw-mod
 
-if (!fs.existsSync("public/raw_mod")) {
-  fs.mkdirSync("public/raw_mod");
-  console.log("> Created public/raw_mod folder");
+if (!fs.existsSync("public/raw-mod")) {
+  fs.mkdirSync("public/raw-mod");
+  console.log("> Created public/raw-mod folder");
 }
 
 fs.readdirSync("public/modules").forEach((file) => {
   file = file.trim();
   console.log(`> Renaming ${file}`);
-  fs.renameSync(`public/modules/${file}`, `public/raw_mod/${file}`);
+  fs.renameSync(`public/modules/${file}`, `public/raw-mod/${file}`);
 });
 
 // delete public/modules folder

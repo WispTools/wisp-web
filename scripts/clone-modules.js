@@ -1,5 +1,4 @@
 const fs = require("fs");
-const prompt = require("prompt-sync")();
 
 // Clear terminal
 console.clear();

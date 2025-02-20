@@ -1,12 +1,12 @@
 "use client";
 
-import { Search, X } from "lucide-react";
+import { Search } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
-import MobileHeader from "./mobileHeader";
-import HeaderButton from "./headerButton";
+import MobileHeader from "./mobile-header";
+import HeaderButton from "./header-button";
 import Logo from "./logo";
 import Transition from "./transition";
 

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 import "@/style/contribute.css";
-import "@/style/home/modLink.css";
+import "@/style/home/mod-link.css";
 
 export default function Contribute() {
   return (

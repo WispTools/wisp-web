@@ -1,4 +1,4 @@
-import BadPage from "@/components/badPage";
+import BadPage from "@/components/bad-page";
 
 export default function NotFound() {
   return <BadPage />;

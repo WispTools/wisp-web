@@ -3,10 +3,10 @@
   "version": "0",
   "private": true,
   "scripts": {
-    "compile": "node ./scripts/compileModules.js",
-    "clone": "node ./scripts/cloneModules.js && git clone https://github.com/WispTools/wisp-modules ./temp/ && node ./scripts/setupModules.js",
-    "dev": "node ./scripts/compileModules.js && next dev --turbopack",
-    "build": "node ./scripts/compileModules.js && next build",
+    "compile": "node ./scripts/compile-modules.js",
+    "clone": "node ./scripts/clone-modules.js && git clone https://github.com/WispTools/wisp-modules ./temp/ && node ./scripts/setup-modules.js",
+    "dev": "node ./scripts/compile-modules.js && next dev --turbopack",
+    "build": "node ./scripts/compile-modules.js && next build",
     "start": "next start",
     "lint": "next lint"
   },

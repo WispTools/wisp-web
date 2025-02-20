@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Home } from "lucide-react";
 
-import "@/style/badPage.css";
+import "@/style/bad-page.css";
 
 export default function BadPage() {
   return (

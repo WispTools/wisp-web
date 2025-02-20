@@ -9,9 +9,9 @@ import { Home, Settings, Heart, GitPullRequestArrow, Code } from "lucide-react";
 import Logo from "./logo";
 import Transition from "./transition";
 
-import "@/style/layout/sideBar.css";
+import "@/style/layout/side-bar.css";
 
-import wispInfo from "@/distData/version.json";
+import wispInfo from "@/dist-data/version.json";
 
 export default function SideBar() {
   const pathname = usePathname();

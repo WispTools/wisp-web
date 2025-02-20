@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import SearchBar from "@/components/searchBar";
+import SearchBar from "@/components/search-bar";
 import Gallery from "@/components/gallery";
 
-import modules from "@/distData/modules.json";
+import modules from "@/dist-data/modules.json";
 
 import "@/style/home/home.css";
 

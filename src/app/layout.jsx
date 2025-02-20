@@ -1,5 +1,5 @@
-import SideBar from "@/components/sideBar";
-import AnalyticsSwitch from "@/components/analyticsSwitch";
+import SideBar from "@/components/side-bar";
+import AnalyticsSwitch from "@/components/analytics-switch";
 
 import "@/style/main.css";
 

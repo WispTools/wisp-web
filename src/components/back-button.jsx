@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import HeaderButton from "./headerButton";
+import HeaderButton from "./header-button";
 
 import Transition from "./transition";
 

@@ -1,13 +1,13 @@
 import Logo from "@/components/logo";
-import BackButton from "@/components/backButton";
-import InfoButton from "@/components/infoButton";
-import LikeButton from "@/components/likeButton";
-import MobileHeader from "@/components/mobileHeader";
-import BadPage from "@/components/badPage";
+import BackButton from "@/components/back-button";
+import InfoButton from "@/components/info-button";
+import LikeButton from "@/components/like-button";
+import MobileHeader from "@/components/mobile-header";
+import BadPage from "@/components/bad-page";
 
-import modules from "@/distData/modules.json";
+import modules from "@/dist-data/modules.json";
 
-import "@/style/modPage/modPage.css";
+import "@/style/mod-page/mod-page.css";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

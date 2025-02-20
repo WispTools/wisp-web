@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import HeaderButton from "./headerButton";
-import "@/style/modPage/likeButton.css";
+import HeaderButton from "./header-button";
+import "@/style/mod-page/like-button.css";
 
 export default function LikeButton({ slug }) {
   const [likedModules, setLikedModules] = useState([]);

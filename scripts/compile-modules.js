@@ -4,29 +4,29 @@ const ProgressBar = require("progress");
 async function main() {
   console.log("Compiling module data");
 
-  // Check to see if public/raw_mod folder exists, if not, cancel
-  if (!fs.existsSync("public/raw_mod")) {
+  // Check to see if public/raw-mod folder exists, if not, cancel
+  if (!fs.existsSync("public/raw-mod")) {
     console.log(
-      "public/raw_mod folder not found, please run npm run clone first"
+      "public/raw-mod folder not found, please run npm run clone first"
     );
     process.exit();
   }
 
-  // check to see if distData folder exists, if not, create it
-  if (!fs.existsSync("src/distData")) {
-    fs.mkdirSync("src/distData");
-    console.log("Created distData folder");
+  // check to see if dist-data folder exists, if not, create it
+  if (!fs.existsSync("src/dist-data")) {
+    fs.mkdirSync("src/dist-data");
+    console.log("Created dist-data folder");
   }
 
   // if file already exists, then delete it
-  if (fs.existsSync("src/distData/modules.json")) {
-    fs.unlinkSync("src/distData/modules.json");
+  if (fs.existsSync("src/dist-data/modules.json")) {
+    fs.unlinkSync("src/dist-data/modules.json");
     console.log("Old modules.json file found, this will be overwritten");
   }
 
-  // check public/raw_mod and fetch the names of each directory and create an array of them
+  // check public/raw-mod and fetch the names of each directory and create an array of them
   const modules = fs
-    .readdirSync("public/raw_mod", { withFileTypes: true })
+    .readdirSync("public/raw-mod", { withFileTypes: true })
     .filter((file) => file.isDirectory() && file.name !== ".git")
     .map((dir) => dir.name);
 
@@ -36,26 +36,26 @@ async function main() {
   });
   const moduleData = modules.map((mod) => {
     const info = JSON.parse(
-      fs.readFileSync(`public/raw_mod/${mod}/info.json`, "utf-8")
+      fs.readFileSync(`public/raw-mod/${mod}/info.json`, "utf-8")
     );
     info.slug = mod;
     modBar.tick();
     return info;
   });
 
-  fs.writeFileSync("src/distData/modules.json", JSON.stringify(moduleData));
+  fs.writeFileSync("src/dist-data/modules.json", JSON.stringify(moduleData));
 
   console.log(
-    "Compiled modules successfully! Data saved to distData/modules.json"
+    "Compiled modules successfully! Data saved to dist-data/modules.json"
   );
 
-  // check if distData/version.json exists, if not, create it
-  if (!fs.existsSync("src/distData/version.json")) {
+  // check if dist-data/version.json exists, if not, create it
+  if (!fs.existsSync("src/dist-data/version.json")) {
     fs.writeFileSync(
-      "src/distData/version.json",
+      "src/dist-data/version.json",
       JSON.stringify({ webVer: "Dev", modVer: "Dev" })
     );
-    console.log("Created distData/version.json");
+    console.log("Created dist-data/version.json");
   }
 
   const contributors = new Set();
@@ -94,7 +94,7 @@ async function main() {
   }
 
   fs.writeFileSync(
-    "src/distData/credits.json",
+    "src/dist-data/credits.json",
     JSON.stringify(credits, null, 2)
   );
 }

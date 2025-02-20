@@ -1,8 +1,8 @@
-import MobileHeader from "@/components/mobileHeader";
-import { HeaderSpacer } from "@/components/headerButton";
+import MobileHeader from "@/components/mobile-header";
+import { HeaderSpacer } from "@/components/header-button";
 import Contributors from "@/components/contributors";
 import Logo from "@/components/logo";
-import BackButton from "@/components/backButton";
+import BackButton from "@/components/back-button";
 
 import "@/style/settings/credits.css";
 

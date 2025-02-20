@@ -1,4 +1,4 @@
-import credits from "@/distData/credits.json";
+import credits from "@/dist-data/credits.json";
 
 export default function Contributors() {
   return (

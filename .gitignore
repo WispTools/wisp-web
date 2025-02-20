@@ -19,8 +19,8 @@
 
 # production
 /build
-/src/distData
-/public/raw_mod
+/src/dist-data
+/public/raw-mod
 /public/scripts
 /public/style
 
