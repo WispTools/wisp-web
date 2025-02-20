@@ -36,16 +36,16 @@ export default function Contribute() {
           <Link
             href="https://github.com/WispTools"
             target="_blank"
-            className="contributeLink"
+            className="linkButton"
           >
             <CodeXml />
             <p>Repositories</p>
           </Link>
-          <Link href="/docs" target="_blank" className="contributeLink">
+          <Link href="/docs" target="_blank" className="linkButton">
             <BookOpen />
             <p>Documentation</p>
           </Link>
-          <Link href="/discord" target="_blank" className="contributeLink">
+          <Link href="/discord" target="_blank" className="linkButton">
             <MessageSquare />
             <p>Discord</p>
           </Link>

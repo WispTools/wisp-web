@@ -22,24 +22,3 @@
 .notFoundContainer p {
   color: var(--secondary-color);
 }
-
-.notFoundContainer a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  border-radius: var(--input-border-radius);
-  background: none;
-  color: var(--primary-color);
-  border: none;
-  cursor: pointer;
-  padding: 16px;
-  text-decoration: none;
-  outline: 1px solid var(--primary-color);
-  height: fit-content;
-}
-
-.notFoundContainer a:active {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-}

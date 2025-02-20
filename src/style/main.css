@@ -162,6 +162,49 @@ h6 {
   width: 100%;
 }
 
+.linkButton {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--half-color);
+  border-radius: var(--container-border-radius);
+  background-color: var(--background-color);
+  box-shadow: inset 0 8px 16px -16px var(--quarter-color);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  align-items: center;
+  outline: 0px solid var(--half-color);
+  transition: background-color 0.05s ease-in-out, outline 0.05s ease-in-out;
+  width: fit-content;
+  justify-content: center;
+}
+
+.linkButton p {
+  color: var(--primary-color) !important;
+  margin: 4px 24px 4px 4px !important;
+}
+
+.linkButton svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 12px 0 12px;
+  color: var(--secondary-color);
+}
+
+@media (hover: hover) {
+  .linkButton:hover {
+    outline: 2px solid var(--half-color);
+    box-shadow: inset 0 0 12px var(--quarter-color);
+  }
+}
+
+.linkButton:active {
+  background-color: var(--half-color);
+  outline: 1px solid var(--half-color);
+  box-shadow: none;
+}
+
 @media screen and (max-width: 1024px) {
   html {
     position: relative;
