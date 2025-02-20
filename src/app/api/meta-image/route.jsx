@@ -3,13 +3,13 @@ import React from "react";
 
 const Inter = fetch(
   new URL(
-    "https://www.wisp.tools/assets/fonts/Inter/Inter.otf",
+    "https://www.wisp.tools/assets/fonts/inter/regular.otf",
     import.meta.url
   )
 ).then((res) => res.arrayBuffer());
 
 const Syne = fetch(
-  new URL("https://www.wisp.tools/assets/fonts/Syne/Syne.otf", import.meta.url)
+  new URL("https://www.wisp.tools/assets/fonts/syne/bold.otf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export const runtime = "edge";

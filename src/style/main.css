@@ -2,50 +2,49 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter/Inter.ttf") format("truetype");
+  src: url("/assets/fonts/inter/regular.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter/Inter-Italic.ttf") format("truetype");
+  src: url("/assets/fonts/inter/italics.ttf") format("truetype");
   font-weight: 100 900;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Space Mono";
-  src: url("/assets/fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/space-mono/regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Space Mono";
-  src: url("/assets/fonts/Space_Mono/SpaceMono-Italic.ttf") format("truetype");
+  src: url("/assets/fonts/space-mono/italics.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Space Mono";
-  src: url("/assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
+  src: url("/assets/fonts/space-mono/bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Space Mono";
-  src: url("/assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf")
-    format("truetype");
+  src: url("/assets/fonts/space-mono/bold-italics.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Syne";
-  src: url("/assets/fonts/Syne/Syne.ttf") format("truetype");
+  src: url("/assets/fonts/syne/variable.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
