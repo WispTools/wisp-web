@@ -162,6 +162,7 @@ export default function PrivacyPolicy() {
           <Link
             href="/privacy-policy.pdf"
             className="linkButton"
+            target="_blank"
             download="privacy-policy.pdf"
           >
             <FileDown />
