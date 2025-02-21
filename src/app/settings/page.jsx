@@ -66,7 +66,21 @@ export default function Settings() {
             <p>View every module's contributors.</p>
           </div>
           <div className="settingsAction">
-            <button onClick={() => Transition(router, "/settings/credits")}>
+            <button onClick={() => Transition(router, "/credits")}>
+              <SquareArrowOutUpRight />
+            </button>
+          </div>
+        </div>
+        <div className="settingsContainer">
+          <div className="settingsInfo">
+            <h4>Privacy Policy</h4>
+            <p>
+              View the privacy policy for the Wisp project. This includes what
+              information we collect and how we use it.
+            </p>
+          </div>
+          <div className="settingsAction">
+            <button onClick={() => Transition(router, "/privacy-policy")}>
               <SquareArrowOutUpRight />
             </button>
           </div>

@@ -1,0 +1,71 @@
+.privacyPolicy {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.policySection {
+  padding: 0 16px;
+}
+
+.policySection h2 {
+  margin: 24px 12px;
+  padding: 0;
+}
+
+.policySection p {
+  margin: 24px 12px;
+  line-height: 36px;
+  padding: 0;
+  color: var(--secondary-color);
+}
+
+.policySection ul {
+  margin: 24px 12px;
+  line-height: 36px;
+
+  color: var(--secondary-color);
+}
+
+.policySection h2,
+.policySection h3,
+.policySection h4,
+.policySection h5,
+.policySection h6 {
+  font-family: var(--sans-serif);
+  margin: 24px 12px;
+  padding: 0;
+}
+
+.policySection strong {
+  color: var(--primary-color);
+}
+
+.policySection a {
+  color: var(--primary-color);
+}
+
+.policyFooter {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyFooter img {
+  filter: saturate(0) brightness(0.5);
+  transition: filter 0.1s ease-in-out;
+}
+
+.policyFooter img:hover {
+  filter: saturate(1) brightness(1);
+}
+
+.policyFooter a {
+  margin: 24px;
+}
