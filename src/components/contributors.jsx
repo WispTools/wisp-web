@@ -10,7 +10,7 @@ export default function Contributors() {
           target="_blank"
           className="creditsContributorName"
         >
-          {contributor[0]}
+          <p>{contributor[0]}</p>
         </a>
       ))}
     </>

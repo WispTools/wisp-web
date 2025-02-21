@@ -26,7 +26,6 @@
 .creditsContributors {
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
 }
 
 .credits a {
@@ -36,8 +35,6 @@
   cursor: pointer;
   text-decoration: none;
   display: block;
-  margin: 16px 0;
-  line-height: 0;
 }
 
 .credits a:hover {

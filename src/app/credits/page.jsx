@@ -4,7 +4,7 @@ import Contributors from "@/components/contributors";
 import Logo from "@/components/logo";
 import BackButton from "@/components/back-button";
 
-import "@/style/settings/credits.css";
+import "@/style/credits.css";
 
 export default function Credits() {
   return (
@@ -22,7 +22,7 @@ export default function Credits() {
           <p>Ethan Hazel</p>
           <span className="creditsLabel">Icon Designs</span>
           <a href="https://lucide.dev/" target="_blank">
-            Lucide
+            <p>Lucide</p>
           </a>
           <span className="creditsLabel">Special Thanks</span>
           <p>Elizabeth Grier</p>
