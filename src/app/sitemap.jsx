@@ -1,39 +1,39 @@
-import modules from "@/dist-data/modules.json";
+const SITE_URL = "https://www.wisp.tools";
 
 export default function sitemap() {
   const sitemap = [
     {
-      url: "https://www.wisp.tools/",
+      url: `${SITE_URL}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://www.wisp.tools/favorites",
+      url: `${SITE_URL}/favorites`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: "https://www.wisp.tools/contribute",
+      url: `${SITE_URL}/contribute`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: "https://www.wisp.tools/settings",
+      url: `${SITE_URL}/settings`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: "https://www.wisp.tools/discord",
+      url: `${SITE_URL}/discord`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.25,
     },
     {
-      url: "https://www.wisp.tools/docs",
+      url: `${SITE_URL}/docs`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.25,
@@ -42,7 +42,7 @@ export default function sitemap() {
 
   modules.forEach((module) => {
     sitemap.push({
-      url: `https://www.wisp.tools/mod/${module.slug}`,
+      url: `${SITE_URL}/mod/${module.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

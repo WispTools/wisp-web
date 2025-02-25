@@ -1,9 +1,12 @@
+const SITE_URL = "https://www.wisp.tools";
+
 export default function robots() {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      allow: ["/"],
+      disallow: ["/api/", "/dist-data/", "/raw-mod/"],
     },
-    sitemap: `https://www.wisp.tools/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
