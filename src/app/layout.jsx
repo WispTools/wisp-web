@@ -87,7 +87,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body onTouchStart="">
+      <body>
         <div className="main">
           <SideBar />
           <div className="content">{children}</div>
