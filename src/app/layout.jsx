@@ -33,7 +33,7 @@ export const metadata = {
   },
   appleWebApp: {
     title: "Wisp",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "black",
     startupImage: "https://www.wisp.tools/assets/meta/appleStartup.png",
     capable: true,
   },
