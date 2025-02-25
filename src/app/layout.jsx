@@ -3,16 +3,19 @@ import AnalyticsSwitch from "@/components/analytics-switch";
 
 import "@/style/main.css";
 
+const TITLE = "Wisp - The Web Interface for Simple Programs";
+const DESCRIPTION =
+  "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place.";
+
 export const metadata = {
   metadataBase: new URL("https://www.wisp.tools"),
   openGraph: {
-    title: "Wisp - The Web Interface for Simple Programs",
-    description:
-      "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place. It's designed to be easy to use, where anyone can create and add their own modules.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
         url: "https://www.wisp.tools/assets/meta/default.png",
-        alt: "Wisp - The Web Interface for Simple Programs",
+        alt: TITLE,
       },
     ],
     siteName: "Wisp",
@@ -22,12 +25,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wisp - The Web Interface for Simple Programs",
-    description:
-      "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place. It's designed to be easy to use, where anyone can create and add their own modules.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: {
       url: "https://www.wisp.tools/assets/meta/default.png",
-      alt: "Wisp - The Web Interface for Simple Programs",
+      alt: TITLE,
     },
     creator: "@EthanHazelGD",
   },
@@ -62,11 +64,10 @@ export const metadata = {
     },
   },
   title: {
-    template: "%s ▸ Wisp",
-    default: "Wisp",
+    template: "%s ▸ " + TITLE,
+    default: TITLE,
   },
-  description:
-    "WISP (Web Interface for Simple Programs) is a free, open-source website that hosts a collection of simple tools like converters and generators, all in one place. It's designed to be easy to use, where anyone can create and add their own modules.",
+  description: DESCRIPTION,
   alternates: {
     canonical: "https://www.wisp.tools/",
     languages: {
