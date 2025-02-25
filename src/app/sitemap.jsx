@@ -1,3 +1,4 @@
+import modules from "../dist-data/modules.json";
 const SITE_URL = "https://www.wisp.tools";
 
 export default function sitemap() {
