@@ -26,8 +26,8 @@
 .modal {
   display: flex;
   flex-direction: column;
-  background-color: rgba(5, 5, 5, 0.25);
-  backdrop-filter: blur(8px);
+  background-color: var(--background-color-trans);
+  backdrop-filter: var(--background-blur);
   color: var(--primary-color);
   border-radius: var(--container-border-radius);
   outline: 1px solid var(--half-color);
