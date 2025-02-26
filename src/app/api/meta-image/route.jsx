@@ -14,6 +14,17 @@ const Syne = fetch(
 
 export const runtime = "edge";
 
+const CACHE_MAX_SIZE = 100;
+const cache = new Map();
+
+function addToCache(key, value) {
+  cache.set(key, value);
+  if (cache.size > CACHE_MAX_SIZE) {
+    const oldestKey = cache.keys().next().value;
+    cache.delete(oldestKey);
+  }
+}
+
 function PascalCaseToKebabCase(str) {
   return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
@@ -27,21 +38,28 @@ export async function GET(request) {
   const iconName =
     PascalCaseToKebabCase(searchParams.get("iconName")) || "circle-help";
 
+  const cacheKey = JSON.stringify({ slug, title, description, iconName });
+
+  const cached = cache.get(cacheKey);
+  if (cached) {
+    return new Response(cached.buffer, {
+      headers: cached.headers,
+    });
+  }
+
   const svgUrl = `https://unpkg.com/lucide-static@latest/icons/${iconName}.svg`;
 
   try {
     const iconSvg = await fetch(svgUrl).then((res) => res.text());
-
     const viewBoxMatch = iconSvg.match(/viewBox="([^"]+)"/);
     const viewBox = viewBoxMatch ? viewBoxMatch[1] : "0 0 24 24";
-
     const elementMatches = [
       ...iconSvg.matchAll(
         /<(path|rect|circle|line|polyline|polygon|ellipse)\s([^>]+)\/>/g
       ),
     ];
 
-    return new ImageResponse(
+    const imageResponse = new ImageResponse(
       (
         <div
           style={{
@@ -177,6 +195,13 @@ export async function GET(request) {
         ],
       }
     );
+    const buffer = await imageResponse.arrayBuffer();
+    const headers = new Headers(imageResponse.headers);
+    headers.set("Cache-Control", "public, max-age=31536000, immutable");
+
+    addToCache(cacheKey, { buffer, headers });
+
+    return new Response(buffer, { headers });
   } catch (error) {
     console.error("Error fetching or processing SVG:", error);
     return new Response("Error generating image", { status: 500 });
