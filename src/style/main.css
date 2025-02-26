@@ -138,7 +138,7 @@ h6 {
 
 .header {
   text-align: center;
-  width: calc(100% - 64px);
+  width: calc(100% - 64px - 2px);
   display: flex;
   flex-direction: column;
   border: 1px solid var(--half-color);
