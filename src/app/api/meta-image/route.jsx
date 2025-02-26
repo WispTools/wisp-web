@@ -91,7 +91,7 @@ export async function GET(request) {
             <p
               style={{
                 fontSize: "1.5rem",
-                color: "#717171",
+                color: "#847b7b",
                 fontFamily: "Syne, sans-serif",
                 fontWeight: "bold",
               }}
@@ -130,7 +130,7 @@ export async function GET(request) {
               <p
                 style={{
                   fontSize: "1.5rem",
-                  color: "#717171",
+                  color: "#847b7b",
                   overflowWrap: "break-word",
                   wordBreak: "break-all",
                 }}
@@ -145,7 +145,7 @@ export async function GET(request) {
                 padding: "3rem",
                 aspectRatio: "1/1",
                 borderRadius: "1rem",
-                border: "2px solid #444",
+                border: "2px solid #524d4f",
                 color: "#DDD",
                 flexShrink: 0,
                 marginLeft: "4rem",

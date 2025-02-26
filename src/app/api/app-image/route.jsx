@@ -50,7 +50,7 @@ export async function GET(request) {
           style={{
             display: "flex",
             flexDirection: "column",
-            backgroundColor: "#070707",
+            backgroundColor: "#050505",
             width: "100%",
             height: "100%",
             alignItems: "center",
