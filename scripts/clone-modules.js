@@ -1,8 +1,5 @@
 const fs = require("fs");
 
-// Clear terminal
-console.clear();
-
 // Check if temp folder exists and delete it
 if (fs.existsSync("temp")) {
   fs.rmSync("temp", { recursive: true });

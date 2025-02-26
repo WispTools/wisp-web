@@ -76,7 +76,5 @@ fs.readdirSync("public/modules").forEach((file) => {
 fs.rmdirSync("public/modules");
 console.log("> Deleted public/modules folder");
 
-console.clear();
-
 console.log("\x1b[32mModules cloned successfully!\x1b[0m");
 console.log("Run \x1b[34mnpm run dev\x1b[0m to start the server\n");
