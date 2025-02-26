@@ -36,14 +36,14 @@ hr {
   color: var(--secondary-color);
 }
 
-.infoTagContainer {
+.infoKeywordContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.infoTag {
+.infoKeyword {
   display: inline-block;
   padding: 0.5em 1em;
   background-color: var(--half-color);

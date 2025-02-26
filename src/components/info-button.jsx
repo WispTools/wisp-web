@@ -39,10 +39,10 @@ export default function InfoButton({ module }) {
                 </a>
               ))}
             </div>
-            <div className="infoLabel">Module Tags:</div>
-            <div className="infoTagContainer">
-              {module.tags.map((tag) => (
-                <div className="infoTag">{tag}</div>
+            <div className="infoLabel">Module Keywords:</div>
+            <div className="infoKeywordContainer">
+              {module.keywords.map((keyword) => (
+                <div className="infoKeyword">{keyword}</div>
               )) || <p>None</p>}
             </div>
           </div>
