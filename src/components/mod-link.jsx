@@ -67,6 +67,10 @@ export default function ModLink({ slug, searchQuery, favoritesQuery }) {
     }
   }
 
+  if (moduleData.unlisted === true) {
+    return <></>;
+  }
+
   return (
     <button
       onClick={() => Transition(router, `/mod/${slug}`)}
