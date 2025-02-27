@@ -10,6 +10,7 @@ import "@/style/home/home.css";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const publicModules = modules.filter((module) => !module.unlisted);
 
   return (
     <div className="home">
@@ -18,7 +19,7 @@ export default function Home() {
         <div className="header">
           <h3>Welcome to Wisp!</h3>
           <h1>The Web Interface for Simple Programs</h1>
-          <h3>Currently hosting {modules.length} modules</h3>
+          <h3>Currently hosting {publicModules.length} modules</h3>
         </div>
         <Gallery searchQuery={searchQuery} favoritesQuery={false} />
       </div>
