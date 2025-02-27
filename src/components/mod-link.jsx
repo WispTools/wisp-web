@@ -67,7 +67,7 @@ export default function ModLink({ slug, searchQuery, favoritesQuery }) {
     }
   }
 
-  if (moduleData.unlisted === true) {
+  if (moduleData.unlisted === true && !favoritesQuery) {
     return <></>;
   }
 
