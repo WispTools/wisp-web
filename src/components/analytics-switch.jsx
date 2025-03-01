@@ -1,20 +1,24 @@
 "use client";
 
 import { Analytics } from "@vercel/analytics/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function AnalyticsSwitch() {
-  let sendAnalytics = "false";
+  const [showAnalytics, setShowAnalytics] = useState(false);
+
   useEffect(() => {
-    sendAnalytics = localStorage.getItem("sendAnalytics");
+    const sendAnalytics = localStorage.getItem("sendAnalytics");
+
     if (sendAnalytics === null) {
       localStorage.setItem("sendAnalytics", "true");
-      return <Analytics />;
-    }
-    if (sendAnalytics === "true") {
-      return <Analytics />;
+      setShowAnalytics(true);
+      console.log("Analytics enabled (default)");
+    } else {
+      const shouldShow = sendAnalytics === "true";
+      setShowAnalytics(shouldShow);
+      console.log(`Analytics ${shouldShow ? "enabled" : "disabled"}`);
     }
   }, []);
 
-  return null;
+  return showAnalytics ? <Analytics /> : null;
 }
