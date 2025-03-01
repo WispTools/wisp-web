@@ -11,11 +11,10 @@ export default function AnalyticsSwitch() {
       localStorage.setItem("sendAnalytics", "true");
       return <Analytics />;
     }
+    if (sendAnalytics === "true") {
+      return <Analytics />;
+    }
   }, []);
-
-  if (sendAnalytics === "true") {
-    return <Analytics />;
-  }
 
   return null;
 }
