@@ -13,14 +13,14 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![GPL-3.0](https://img.shields.io/badge/GPL--3.0-red?style=for-the-badge)
 
+---
+
 ## 🌟 Introduction
 
 **WISP** is an open-source hub for lightweight web tools, offering converters, generators, and utilities in one clean interface. Built for both users and developers:
 
 - **For Users**: Instant access to simple tools without ads, trackers, or complexity.
 - **For Developers**: A modular framework with ready-to-use templates and a development kit to create new tools effortlessly.
-
----
 
 ## 🗂 Repository Structure
 
@@ -32,8 +32,6 @@ This project consists of two core repositories:
 | **This Repository**                                           | Main website UI, module integration, and deployment pipeline | Layout, optimization, documentation |
 
 **⚠️ Contributor Note**: Most contributions belong in `wisp-modules` unless you're modifying the website's core infrastructure.
-
----
 
 ## 🛠 How This Repo Works
 
@@ -48,8 +46,6 @@ This project consists of two core repositories:
 2. **Data Compilation**: Generates a cached database in `/dist-data` (module metadata, slugs, configs) to eliminate external API calls.
 3. **Static Build**: Generates a production-ready static site for fast loading.
 
----
-
 ## 🤝 Contributions Welcome!
 
 We encourage contributions of all sizes! Here’s how you can help:
@@ -63,8 +59,6 @@ We encourage contributions of all sizes! Here’s how you can help:
 
 1. Fork the repo and clone to your local machine
 2. For major changes, open an issue first to discuss scope.
-
----
 
 ## 🚀 Local Development Setup
 
@@ -90,13 +84,9 @@ npm run clone
 npm run dev
 ```
 
----
-
 ## 📜 License
 
 This project is licensed under **GPL-3.0** - see the [full license text](https://www.gnu.org/licenses/gpl-3.0.en.html). All derived works must remain open-source.
-
----
 
 ## 🔒 Privacy Policy
 
@@ -106,8 +96,6 @@ We value your privacy:
 - **Zero PII**: We never store emails, IPs, or identifiable data.
 
 Read our full policy at [wisp.tools/privacy-policy](https://wisp.tools/privacy-policy).
-
----
 
 ## 📬 Contact
 
