@@ -116,7 +116,3 @@ Have questions or ideas? Reach out!
 - **GitHub**: [Open an Issue](https://github.com/WispTools/wisp/issues)
 - **Email**: [contact@ehazel.com](mailto:contact@ehazel.com)
 - **Community**: Join our [Discussions](https://github.com/WispTools/wisp/discussions)
-
----
-
-[⬆ Back to Top](#wisp-web-interface-for-simple-programs-)
